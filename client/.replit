@@ -1,0 +1,9 @@
+run = "npm run dev"
+entrypoint = "server/index.ts"
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+run = ["npm", "run", "start"]
+build = ["npm", "run", "build"]
