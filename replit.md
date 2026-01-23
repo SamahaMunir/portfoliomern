@@ -24,6 +24,11 @@ Preferred communication style: Simple, everyday language.
 - **Runtime**: Node.js with Express 5
 - **Language**: TypeScript (compiled with tsx for development, esbuild for production)
 - **Database**: MongoDB via Mongoose ODM
+- **API Routes**:
+  - `GET /api/projects`: Fetch all projects
+  - `GET /api/projects/:id`: Fetch single project
+  - `POST /api/projects`: Create new project
+  - `POST /api/contact`: Submit contact form
 - **Authentication**: JWT (jsonwebtoken) with bcryptjs for password hashing
 - **Session Management**: express-session with cookie-parser
 - **API Design**: RESTful endpoints under `/api` prefix
