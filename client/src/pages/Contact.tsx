@@ -1,22 +1,78 @@
+import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const mutation = useMutation({
+    mutationFn: async (data: typeof formData) => {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed to send message");
+      return res.json();
+    },
+    onSuccess: () => {
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    mutation.mutate(formData);
+  };
+
   return (
-    <div className="container mx-auto px-4 py-12 max-w-2xl">
-      <h1 className="text-4xl font-bold mb-8 text-center">Contact Me</h1>
-      <form className="space-y-6">
+    <div className="container mx-auto px-4 py-20 max-w-2xl">
+      <h1 className="text-4xl font-bold text-center mb-12">Get In Touch</h1>
+      
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-sm font-medium mb-2">Name</label>
-          <input type="text" className="w-full p-2 border border-border rounded-md bg-background" />
+          <label className="block mb-2 font-medium">Name</label>
+          <input
+            type="text"
+            required
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            className="w-full p-3 border border-border rounded-lg bg-background"
+          />
         </div>
+        
         <div>
-          <label className="block text-sm font-medium mb-2">Email</label>
-          <input type="email" className="w-full p-2 border border-border rounded-md bg-background" />
+          <label className="block mb-2 font-medium">Email</label>
+          <input
+            type="email"
+            required
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            className="w-full p-3 border border-border rounded-lg bg-background"
+          />
         </div>
+        
         <div>
-          <label className="block text-sm font-medium mb-2">Message</label>
-          <textarea className="w-full p-2 border border-border rounded-md bg-background h-32"></textarea>
+          <label className="block mb-2 font-medium">Message</label>
+          <textarea
+            required
+            rows={6}
+            value={formData.message}
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            className="w-full p-3 border border-border rounded-lg bg-background"
+          />
         </div>
-        <button type="submit" className="w-full py-2 bg-primary text-primary-foreground rounded-md hover:opacity-90 transition-opacity">
-          Send Message
+        
+        <button
+          type="submit"
+          disabled={mutation.isPending}
+          className="w-full bg-primary text-primary-foreground p-3 rounded-lg font-semibold hover:opacity-90 transition"
+        >
+          {mutation.isPending ? "Sending..." : "Send Message"}
         </button>
       </form>
     </div>
