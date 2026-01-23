@@ -19,23 +19,30 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Middleware
-app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:3000",
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "http://localhost:3000",
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI && process.env.MONGODB_URI !== "your_mongodb_connection_string" 
-  ? process.env.MONGODB_URI 
-  : "mongodb://127.0.0.1:27017/portfolio";
+const MONGODB_URI =
+  process.env.MONGODB_URI &&
+  process.env.MONGODB_URI !== "your_mongodb_connection_string"
+    ? process.env.MONGODB_URI
+    : "mongodb://127.0.0.1:27017/portfolio";
 
-mongoose.connect(MONGODB_URI)
+mongoose
+  .connect(MONGODB_URI)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => {
-    console.error("❌ MongoDB connection error. Please ensure MONGODB_URI is set correctly in secrets.");
+    console.error(
+      "❌ MongoDB connection error. Please ensure MONGODB_URI is set correctly in secrets.",
+    );
     console.error(err);
   });
 
