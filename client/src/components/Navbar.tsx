@@ -1,31 +1,17 @@
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 
 export default function Navbar() {
-  const [location] = useLocation();
-
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    { href: "/contact", label: "Contact" },
-  ];
-
   return (
-    <nav className="border-b border-border p-4 sticky top-0 bg-background/80 backdrop-blur-sm z-50">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold tracking-tight">Portfolio</Link>
-        <div className="space-x-6 text-sm font-medium">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`transition-colors hover:text-primary ${
-                location === link.href ? "text-primary" : "text-muted-foreground"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
+    <nav className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <Link href="/">
+          <a className="text-2xl font-bold text-primary">Your Name</a>
+        </Link>
+        <ul className="flex gap-6">
+          <li><Link href="/"><a className="hover:text-primary transition">Home</a></Link></li>
+          <li><Link href="/projects"><a className="hover:text-primary transition">Projects</a></Link></li>
+          <li><Link href="/contact"><a className="hover:text-primary transition">Contact</a></Link></li>
+        </ul>
       </div>
     </nav>
   );
