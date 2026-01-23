@@ -1,16 +1,7 @@
 import express from "express";
-import mongoose from "mongoose";
+import Contact from "../models/Contact.js";
 
 const router = express.Router();
-
-const contactSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  message: String,
-  createdAt: { type: Date, default: Date.now }
-});
-
-const Contact = mongoose.model("Contact", contactSchema);
 
 router.post("/", async (req, res) => {
   try {
