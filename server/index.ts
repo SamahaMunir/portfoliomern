@@ -28,9 +28,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || "")
+const MONGODB_URI = process.env.MONGODB_URI && process.env.MONGODB_URI !== "your_mongodb_connection_string" 
+  ? process.env.MONGODB_URI 
+  : "mongodb://127.0.0.1:27017/portfolio";
+
+mongoose.connect(MONGODB_URI)
   .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.error("❌ MongoDB Error:", err));
+  .catch((err) => {
+    console.error("❌ MongoDB connection error. Please ensure MONGODB_URI is set correctly in secrets.");
+    console.error(err);
+  });
 
 // API Routes
 app.use("/api/projects", projectRoutes);
