@@ -1,17 +1,16 @@
 {
-  "name": "nodejs",
+  "name": "portfolio-mern",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "server": "tsx watch server/index.ts",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "tsx server/index.ts",
+    "dev:frontend": "vite",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "vite build",
+    "build:backend": "npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/backend.js",
+    "start": "NODE_ENV=production node dist/backend.js",
+    "check": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-dialog": "^1.1.15",
