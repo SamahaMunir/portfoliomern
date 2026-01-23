@@ -1,0 +1,57 @@
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail } from "lucide-react";
+
+export default function Home() {
+  return (
+    <div className="container mx-auto px-4 py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center max-w-3xl mx-auto"
+      >
+        <h1 className="text-5xl font-bold mb-6">
+          Hi, I'm <span className="text-primary">Your Name</span>
+        </h1>
+        <p className="text-xl text-muted-foreground mb-8">
+          Full Stack Software Engineer | MERN Stack Developer
+        </p>
+        <p className="text-lg mb-12">
+          I build modern web applications with React, Node.js, MongoDB, and Express.
+          Passionate about creating clean, efficient, and user-friendly solutions.
+        </p>
+        
+        <div className="flex justify-center gap-4">
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
+             className="p-3 border border-border rounded-lg hover:bg-accent transition">
+            <Github className="w-6 h-6" />
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"
+             className="p-3 border border-border rounded-lg hover:bg-accent transition">
+            <Linkedin className="w-6 h-6" />
+          </a>
+          <a href="mailto:your.email@example.com"
+             className="p-3 border border-border rounded-lg hover:bg-accent transition">
+            <Mail className="w-6 h-6" />
+          </a>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="mt-20"
+      >
+        <h2 className="text-3xl font-bold text-center mb-10">Technical Skills</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {["React", "Node.js", "MongoDB", "Express", "TypeScript", "Tailwind CSS", "Git", "REST APIs"].map((skill) => (
+            <div key={skill} className="p-4 border border-border rounded-lg text-center hover:border-primary transition">
+              {skill}
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+}
