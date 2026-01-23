@@ -8,18 +8,31 @@ router.get("/", async (req, res) => {
   try {
     const projects = await Project.find().sort({ createdAt: -1 });
     res.json(projects);
-  } catch (err) {
+  } catch (error) {
     res.status(500).json({ message: "Error fetching projects" });
   }
 });
 
-// Create a project (Protected route usually, but keeping it simple for now)
+// Get single project
+router.get("/:id", async (req, res) => {
+  try {
+    const project = await Project.findById(req.params.id);
+    if (!project) {
+      return res.status(404).json({ message: "Project not found" });
+    }
+    res.json(project);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching project" });
+  }
+});
+
+// Create project (you can add authentication later)
 router.post("/", async (req, res) => {
   try {
-    const newProject = new Project(req.body);
-    const savedProject = await newProject.save();
-    res.status(201).json(savedProject);
-  } catch (err) {
+    const project = new Project(req.body);
+    await project.save();
+    res.status(201).json(project);
+  } catch (error) {
     res.status(400).json({ message: "Error creating project" });
   }
 });
