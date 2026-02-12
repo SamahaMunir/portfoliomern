@@ -114,33 +114,13 @@ export default function Home() {
 
             {/* Main Heading */}
             <div>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="text-lg md:text-xl text-muted-foreground mb-4"
-              >
-                Hi, I'm 
-              </motion.p>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+                Hi, I'm <span className="text-primary">Samaha Munir</span>
+              </h1>
               
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
-              >
-                <span className="gradient-text">Samaha Munir</span>
-              </motion.h1>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="flex items-center justify-center gap-3 text-2xl md:text-4xl font-semibold mb-6"
-              >
-                <Code2 className="w-8 h-8 md:w-12 md:h-12 text-primary animate-pulse" />
-                <span>Full Stack Software Engineer</span>
-              </motion.div>
+              <p className="text-2xl md:text-4xl font-semibold mb-6">
+                Full Stack Software Engineer | MERN Stack Developer
+              </p>
 
               <motion.p
                 initial={{ opacity: 0 }}
