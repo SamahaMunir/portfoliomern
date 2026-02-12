@@ -68,7 +68,7 @@ export default function Navbar() {
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
-              href="https://www.linkedin.com/in/samaha-munir-b52834318/"
+              href="https://linkedin.com/in/samaha-munir-b52834318"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition"
@@ -109,7 +109,7 @@ export default function Navbar() {
               <a href="https://github.com/SamahaMunir" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/samaha-munir-b52834318/" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/samaha-munir-b52834318" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5" />
               </a>
               <ThemeToggle />
