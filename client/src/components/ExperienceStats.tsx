@@ -5,39 +5,39 @@ interface Stat {
   icon: any;
   value: string;
   label: string;
-  gradient: string;
+  description: string;
 }
 
 const stats: Stat[] = [
   {
     icon: Briefcase,
-    value: "8+",
+    value: "3+",
     label: "Years Experience",
-    gradient: "from-blue-500 to-cyan-500",
+    description: "Software Development",
   },
   {
     icon: Code2,
-    value: "50+",
-    label: "Projects Completed",
-    gradient: "from-purple-500 to-pink-500",
+    value: "15+",
+    label: "Projects Built",
+    description: "Production Ready",
   },
   {
     icon: Award,
-    value: "15+",
-    label: "Technologies Mastered",
-    gradient: "from-orange-500 to-red-500",
+    value: "12+",
+    label: "Technologies",
+    description: "Modern Stack",
   },
   {
     icon: TrendingUp,
     value: "100%",
-    label: "Client Satisfaction",
-    gradient: "from-green-500 to-emerald-500",
+    label: "Success Rate",
+    description: "Client Satisfaction",
   },
 ];
 
 export default function ExperienceStats() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
       {stats.map((stat, index) => (
         <motion.div
           key={stat.label}
@@ -45,42 +45,26 @@ export default function ExperienceStats() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1 }}
-          whileHover={{ y: -5, scale: 1.02 }}
-          className="relative group"
+          className="group"
         >
-          <div className="glass rounded-xl p-6 text-center border border-border/50 hover:border-primary/50 transition-all duration-300">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-background via-background to-primary/5 border-2 border-border hover:border-primary/50 transition-all duration-300 p-8">
+            {/* Background gradient on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
             {/* Icon */}
-            <div className="relative mb-4 inline-block">
-              <motion.div
-                animate={{
-                  rotate: [0, 360],
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} opacity-20 blur-xl rounded-full`}
-              />
-              <div className={`relative w-12 h-12 rounded-full bg-gradient-to-r ${stat.gradient} flex items-center justify-center mx-auto`}>
-                <stat.icon className="w-6 h-6 text-white" />
+            <div className="relative mb-6">
+              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                <stat.icon className="w-8 h-8 text-primary" />
               </div>
             </div>
 
             {/* Value */}
-            <motion.div
-              initial={{ scale: 0.5 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
-              className="text-3xl md:text-4xl font-bold gradient-text mb-2"
-            >
-              {stat.value}
-            </motion.div>
-
-            {/* Label */}
-            <div className="text-sm text-muted-foreground font-medium">
-              {stat.label}
+            <div className="relative">
+              <div className="text-5xl font-bold mb-2 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
+                {stat.value}
+              </div>
+              <div className="text-lg font-semibold mb-1">{stat.label}</div>
+              <div className="text-sm text-muted-foreground">{stat.description}</div>
             </div>
           </div>
         </motion.div>
