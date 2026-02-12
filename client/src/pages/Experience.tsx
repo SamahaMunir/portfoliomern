@@ -1,97 +1,113 @@
 import { motion } from "framer-motion";
-import { Briefcase, Award, Rocket, Download } from "lucide-react";
+import { Briefcase, Award, Rocket, Download, Code2 } from "lucide-react";
 import ExperienceTimeline from "../components/ExperienceTimeline";
-import ExperienceStats from "../components/ExperienceStats";
 import SkillBadge from "../components/SkillBadge";
 import type { Experience } from "../types/experience";
 
-// Sample experience data
+// YOUR ACTUAL EXPERIENCE DATA
 const experiences: Experience[] = [
   {
     id: "1",
-    company: "Tech Innovators Inc.",
-    position: "Senior Full Stack Engineer",
-    location: "San Francisco, CA (Remote)",
+    company: "Final Year Project - Fluenti",
+    position: "Full Stack Developer & AI Engineer",
+    location: "Pakistan (Remote)",
     type: "Full-time",
-    startDate: "Jan 2022",
-    endDate: "Present",
-    description: "Leading development of enterprise-scale web applications serving 1M+ users. Architecting microservices infrastructure and mentoring junior developers.",
+    startDate: "July 2024",
+    endDate: "Dec 2024",
+    description: "Led development of Fluenti, an AI-powered speech therapy and emotional support platform serving children and adults. Built comprehensive full-stack application with React, Node.js, MongoDB, and Python Flask, integrating multiple AI services for personalized therapeutic experiences.",
     achievements: [
-      "Reduced application load time by 60% through performance optimization",
-      "Led migration from monolithic to microservices architecture",
-      "Implemented CI/CD pipeline reducing deployment time by 80%",
-      "Mentored team of 5 junior developers, improving code quality by 40%",
+      "Architected and deployed full-stack MERN application with Python Flask microservice for AI therapy bot",
+      "Integrated Google Gemini AI for story generation, OpenAI Whisper for speech-to-text, and Groq LLM for therapy responses",
+      "Implemented real-time speech recognition and text-to-speech for interactive story-based therapy games",
+      "Built crisis detection system using multi-layered AI analysis for emotional support sessions",
+      "Developed secure authentication with JWT, 2FA using TOTP, and encrypted conversation storage",
+      "Created progress tracking system with detailed analytics dashboards and psychological profiling",
+      "Deployed on Render with CI/CD pipeline, achieving 99.9% uptime",
     ],
-    technologies: ["React", "Node.js", "MongoDB", "AWS", "Docker", "Kubernetes", "TypeScript"],
-    logo: "https://images.unsplash.com/photo-1549924231-f129b911e442?w=100&h=100&fit=crop",
-    companyUrl: "https://example.com",
+    technologies: [
+      "React 18",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Python Flask",
+      "Google Gemini AI",
+      "OpenAI API",
+      "Groq LLM",
+      "WebSocket",
+      "JWT Auth",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Docker",
+    ],
+    companyUrl: "https://fluenti-app.onrender.com/",
   },
   {
     id: "2",
-    company: "StartupXYZ",
-    position: "Full Stack Developer",
-    location: "New York, NY",
-    type: "Full-time",
-    startDate: "Mar 2020",
-    endDate: "Dec 2021",
-    description: "Built and launched multiple client-facing applications from concept to production. Collaborated with design and product teams to deliver exceptional user experiences.",
+    company: "Freelance Software Development",
+    position: "MERN Stack Developer",
+    location: "Pakistan (Remote)",
+    type: "Freelance",
+    startDate: "Jan 2023",
+    endDate: "Present",
+    description: "Providing end-to-end web development services specializing in MERN stack applications. Working with clients globally to deliver custom web solutions, from concept to deployment.",
     achievements: [
-      "Developed 10+ production-ready web applications",
-      "Increased user engagement by 150% through UX improvements",
-      "Integrated payment systems processing $2M+ annually",
-      "Reduced bug reports by 70% through comprehensive testing",
+      "Delivered 10+ production-ready web applications for clients across various industries",
+      "Specialized in responsive, user-friendly interfaces using React and modern CSS frameworks",
+      "Implemented RESTful APIs with Node.js and Express, ensuring scalability and performance",
+      "Integrated third-party services including payment gateways, email services, and cloud storage",
+      "Maintained 100% client satisfaction rate with timely delivery and clear communication",
     ],
-    technologies: ["React", "Express", "PostgreSQL", "Redux", "Stripe", "Heroku"],
-    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&h=100&fit=crop",
+    technologies: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "TypeScript",
+      "REST APIs",
+      "Git",
+      "Heroku",
+      "Vercel",
+    ],
   },
   {
     id: "3",
-    company: "Digital Solutions Co.",
-    position: "Frontend Developer",
-    location: "Austin, TX",
-    type: "Full-time",
-    startDate: "Jun 2018",
-    endDate: "Feb 2020",
-    description: "Specialized in creating responsive, accessible web interfaces. Worked closely with UX designers to implement pixel-perfect designs.",
+    company: "Academic Projects",
+    position: "Software Engineering Student",
+    location: "Pakistan",
+    type: "Part-time",
+    startDate: "2021",
+    endDate: "2024",
+    description: "Completed numerous academic projects demonstrating proficiency in full-stack development, database design, and software engineering principles. Focused on building practical applications solving real-world problems.",
     achievements: [
-      "Improved website accessibility score from 65% to 98%",
-      "Implemented responsive design supporting 15+ device types",
-      "Reduced CSS bundle size by 40% through optimization",
-      "Created reusable component library used across 20+ projects",
+      "Built portfolio of 15+ projects showcasing diverse technical skills",
+      "Collaborated with team members using Git for version control and Agile methodologies",
+      "Gained hands-on experience with modern web technologies and best practices",
+      "Presented projects and technical documentation to faculty and peers",
     ],
-    technologies: ["React", "JavaScript", "CSS3", "HTML5", "Sass", "Webpack"],
-    logo: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=100&h=100&fit=crop",
-  },
-  {
-    id: "4",
-    company: "Freelance",
-    position: "Full Stack Developer",
-    location: "Remote",
-    type: "Freelance",
-    startDate: "Jan 2017",
-    endDate: "May 2018",
-    description: "Worked with diverse clients ranging from startups to established businesses. Delivered custom web solutions tailored to specific business needs.",
-    achievements: [
-      "Successfully completed 25+ client projects",
-      "Maintained 5-star rating with 100% client satisfaction",
-      "Built e-commerce platforms generating $500K+ in sales",
-      "Developed custom CMS solutions for content management",
+    technologies: [
+      "JavaScript",
+      "Python",
+      "Java",
+      "SQL",
+      "MongoDB",
+      "HTML/CSS",
+      "Bootstrap",
+      "Git/GitHub",
     ],
-    technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "jQuery", "Bootstrap"],
-    logo: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=100&h=100&fit=crop",
   },
 ];
 
-// Skills data
+// YOUR ACTUAL SKILLS
 const topSkills = [
   { name: "React.js", level: "Expert" as const, icon: "⚛️" },
-  { name: "Node.js", level: "Expert" as const, icon: "🟢" },
+  { name: "Node.js", level: "Advanced" as const, icon: "🟢" },
   { name: "MongoDB", level: "Advanced" as const, icon: "🍃" },
   { name: "TypeScript", level: "Advanced" as const, icon: "🔷" },
-  { name: "Express.js", level: "Expert" as const, icon: "🚂" },
-  { name: "PostgreSQL", level: "Advanced" as const, icon: "🐘" },
-  { name: "AWS", level: "Intermediate" as const, icon: "☁️" },
-  { name: "Docker", level: "Advanced" as const, icon: "🐳" },
+  { name: "Express.js", level: "Advanced" as const, icon: "🚂" },
+  { name: "Python", level: "Intermediate" as const, icon: "🐍" },
+  { name: "AI Integration", level: "Advanced" as const, icon: "🤖" },
+  { name: "REST APIs", level: "Expert" as const, icon: "🔌" },
 ];
 
 export default function ExperiencePage() {
@@ -121,8 +137,8 @@ export default function ExperiencePage() {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            8+ years of crafting exceptional digital experiences across diverse industries.
-            From startups to enterprise solutions, delivering impact through code.
+            Recent Computer Science graduate specializing in full-stack development with the MERN stack. 
+            Successfully delivered Fluenti, an AI-powered healthcare platform, and multiple freelance projects.
           </p>
 
           {/* Download Resume Button */}
@@ -134,14 +150,76 @@ export default function ExperiencePage() {
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold shadow-lg"
           >
             <Download className="w-4 h-4" />
-            Download Full Resume
+            Download Resume
           </motion.a>
         </motion.div>
       </div>
 
       {/* Stats Section */}
       <div className="container mx-auto px-4">
-        <ExperienceStats />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          {[
+            {
+              icon: Code2,
+              value: "15+",
+              label: "Projects Completed",
+              gradient: "from-blue-500 to-cyan-500",
+            },
+            {
+              icon: Briefcase,
+              value: "3+",
+              label: "Years Learning",
+              gradient: "from-purple-500 to-pink-500",
+            },
+            {
+              icon: Award,
+              value: "12+",
+              label: "Technologies",
+              gradient: "from-orange-500 to-red-500",
+            },
+            {
+              icon: Rocket,
+              value: "1",
+              label: "Deployed FYP",
+              gradient: "from-green-500 to-emerald-500",
+            },
+          ].map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="relative group"
+            >
+              <div className="glass rounded-xl p-6 text-center border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <div className="relative mb-4 inline-block">
+                  <motion.div
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} opacity-20 blur-xl rounded-full`}
+                  />
+                  <div className={`relative w-12 h-12 rounded-full bg-gradient-to-r ${stat.gradient} flex items-center justify-center mx-auto`}>
+                    <stat.icon className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <motion.div
+                  initial={{ scale: 0.5 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
+                  className="text-3xl md:text-4xl font-bold gradient-text mb-2"
+                >
+                  {stat.value}
+                </motion.div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* Timeline Section */}
@@ -156,7 +234,7 @@ export default function ExperiencePage() {
             Career Timeline
           </h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-            A chronological journey through my professional experience and key milestones
+            From academic projects to production-ready AI platform - my journey in software engineering
           </p>
         </motion.div>
 
@@ -175,7 +253,7 @@ export default function ExperiencePage() {
             Core Competencies
           </h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-            Technologies and tools I've mastered throughout my career
+            Technologies I've mastered through hands-on project development
           </p>
         </motion.div>
 
@@ -192,7 +270,7 @@ export default function ExperiencePage() {
         </div>
       </div>
 
-      {/* Certifications Section */}
+      {/* Education & Certifications Section */}
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -203,49 +281,80 @@ export default function ExperiencePage() {
           <div className="glass rounded-2xl p-8 md:p-12 border border-border/50">
             <div className="flex items-center gap-3 mb-6">
               <Award className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl font-bold">Certifications & Awards</h2>
+              <h2 className="text-3xl font-bold">Education & Achievements</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: "AWS Certified Solutions Architect",
-                  issuer: "Amazon Web Services",
-                  date: "2023",
-                },
-                {
-                  title: "MongoDB Certified Developer",
-                  issuer: "MongoDB University",
-                  date: "2022",
-                },
-                {
-                  title: "React Developer Certification",
-                  issuer: "Meta (Facebook)",
-                  date: "2021",
-                },
-                {
-                  title: "Best Innovation Award",
-                  issuer: "Tech Innovators Inc.",
-                  date: "2023",
-                },
-              ].map((cert, index) => (
-                <motion.div
-                  key={cert.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ x: 5 }}
-                  className="flex items-start gap-3 p-4 rounded-lg hover:bg-primary/5 transition-colors"
-                >
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold mb-1">{cert.title}</h3>
-                    <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-                    <p className="text-xs text-muted-foreground mt-1">{cert.date}</p>
+            <div className="space-y-6">
+              {/* Education */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ x: 5 }}
+                className="flex items-start gap-3 p-4 rounded-lg hover:bg-primary/5 transition-colors"
+              >
+                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-1">Bachelor of Science in Computer Science</h3>
+                  <p className="text-sm text-muted-foreground">Bahria University</p>
+                  <p className="text-xs text-muted-foreground mt-1">2022 - 2026</p>
+                  <p className="text-sm mt-2">
+                    Final Year Project: <span className="text-primary font-medium">Fluenti - AI-Powered Speech Therapy Platform</span>
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Key Courses */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ x: 5 }}
+                className="flex items-start gap-3 p-4 rounded-lg hover:bg-primary/5 transition-colors"
+              >
+                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold mb-1">Relevant Coursework</h3>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {[
+                      "Data Structures",
+                      "Algorithms",
+                      "Database Systems",
+                      "Web Development",
+                      "Software Engineering",
+                      "AI & Machine Learning",
+                    ].map((course) => (
+                      <span
+                        key={course}
+                        className="text-xs px-3 py-1 bg-secondary rounded-full"
+                      >
+                        {course}
+                      </span>
+                    ))}
                   </div>
-                </motion.div>
-              ))}
+                </div>
+              </motion.div>
+
+              {/* Achievements */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ x: 5 }}
+                className="flex items-start gap-3 p-4 rounded-lg hover:bg-primary/5 transition-colors"
+              >
+                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold mb-1">Notable Achievements</h3>
+                  <ul className="text-sm text-muted-foreground space-y-1 mt-2">
+                    <li>• Successfully deployed production-ready AI healthcare application</li>
+                    <li>• Integrated 5+ AI services (Gemini, OpenAI, Groq) in single platform</li>
+                    <li>• Maintained 100% client satisfaction in freelance projects</li>
+                  </ul>
+                </div>
+              </motion.div>
             </div>
           </div>
         </motion.div>
@@ -261,10 +370,10 @@ export default function ExperiencePage() {
         <div className="max-w-3xl mx-auto text-center glass rounded-2xl p-12 space-y-6">
           <Rocket className="w-16 h-16 mx-auto text-primary" />
           <h2 className="text-3xl md:text-4xl font-bold">
-            Let's Build Something Amazing
+            Let's Build Something Innovative Together
           </h2>
           <p className="text-lg text-muted-foreground">
-            I'm always interested in hearing about new projects and opportunities.
+            I'm excited to bring my skills to a dynamic team and contribute to meaningful projects.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
