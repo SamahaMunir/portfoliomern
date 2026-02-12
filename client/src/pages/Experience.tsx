@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { Briefcase, Award, Rocket, Download, Code2 } from "lucide-react";
+import { Award, Rocket, Download } from "lucide-react";
 import ExperienceTimeline from "../components/ExperienceTimeline";
 import SkillBadge from "../components/SkillBadge";
 import type { Experience } from "../types/experience";
 
-// YOUR ACTUAL EXPERIENCE DATA
+// YOUR ACTUAL EXPERIENCE DATA 
 const experiences: Experience[] = [
   {
     id: "1",
@@ -100,42 +100,32 @@ const experiences: Experience[] = [
 
 // YOUR ACTUAL SKILLS
 const topSkills = [
-  { name: "React.js", level: "Expert" as const, icon: "⚛️" },
-  { name: "Node.js", level: "Advanced" as const, icon: "🟢" },
-  { name: "MongoDB", level: "Advanced" as const, icon: "🍃" },
-  { name: "TypeScript", level: "Advanced" as const, icon: "🔷" },
-  { name: "Express.js", level: "Advanced" as const, icon: "🚂" },
-  { name: "Python", level: "Intermediate" as const, icon: "🐍" },
-  { name: "AI Integration", level: "Advanced" as const, icon: "🤖" },
-  { name: "REST APIs", level: "Expert" as const, icon: "🔌" },
+  { name: "React.js", level: "Expert" as const },
+  { name: "Node.js", level: "Advanced" as const },
+  { name: "MongoDB", level: "Advanced" as const },
+  { name: "TypeScript", level: "Advanced" as const },
+  { name: "Express.js", level: "Advanced" as const },
+  { name: "Python", level: "Intermediate" as const },
+  { name: "AI Integration", level: "Advanced" as const },
+  { name: "REST APIs", level: "Expert" as const },
 ];
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen pt-24 pb-20">
-      {/* Header Section */}
-      <div className="container mx-auto px-4 mb-16">
+    <div className="min-h-screen pt-32 pb-20">
+      {/* Hero Section - More spacing from navbar */}
+      <div className="container mx-auto px-4 mb-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center max-w-3xl mx-auto space-y-6"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass"
-          >
-            <Briefcase className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Professional Journey</span>
-          </motion.div>
-
           {/* Title */}
           <h1 className="text-4xl md:text-6xl font-bold">
             <span className="gradient-text">Work Experience</span>
           </h1>
 
+          {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Recent Computer Science graduate specializing in full-stack development with the MERN stack. 
             Successfully delivered Fluenti, an AI-powered healthcare platform, and multiple freelance projects.
@@ -155,70 +145,40 @@ export default function ExperiencePage() {
         </motion.div>
       </div>
 
-      {/* Stats Section */}
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {[
-            {
-              icon: Code2,
-              value: "15+",
-              label: "Projects Completed",
-              gradient: "from-blue-500 to-cyan-500",
-            },
-            {
-              icon: Briefcase,
-              value: "3+",
-              label: "Years Learning",
-              gradient: "from-purple-500 to-pink-500",
-            },
-            {
-              icon: Award,
-              value: "12+",
-              label: "Technologies",
-              gradient: "from-orange-500 to-red-500",
-            },
-            {
-              icon: Rocket,
-              value: "1",
-              label: "Deployed FYP",
-              gradient: "from-green-500 to-emerald-500",
-            },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="relative group"
-            >
-              <div className="glass rounded-xl p-6 text-center border border-border/50 hover:border-primary/50 transition-all duration-300">
-                <div className="relative mb-4 inline-block">
-                  <motion.div
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} opacity-20 blur-xl rounded-full`}
-                  />
-                  <div className={`relative w-12 h-12 rounded-full bg-gradient-to-r ${stat.gradient} flex items-center justify-center mx-auto`}>
-                    <stat.icon className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-                <motion.div
-                  initial={{ scale: 0.5 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
-                  className="text-3xl md:text-4xl font-bold gradient-text mb-2"
+      {/* Stats Section - Professional */}
+      <div className="container mx-auto px-4 mb-24">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+            {[
+              { value: "15+", label: "Projects" },
+              { value: "3+", label: "Years" },
+              { value: "12+", label: "Technologies" },
+              { value: "100%", label: "Satisfaction" },
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ 
+                  scale: 1.1,
+                  transition: { type: "spring", stiffness: 300, damping: 15 }
+                }}
+                className="text-center group cursor-default"
+              >
+                <motion.div 
+                  className="text-6xl md:text-7xl font-bold mb-3 transition-colors duration-300 group-hover:text-primary"
+                  whileHover={{ scale: 1.05 }}
                 >
                   {stat.value}
                 </motion.div>
-                <div className="text-sm text-muted-foreground font-medium">
+                <div className="text-base md:text-lg text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                   {stat.label}
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -230,10 +190,10 @@ export default function ExperiencePage() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
             Career Timeline
           </h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-center text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             From academic projects to production-ready AI platform - my journey in software engineering
           </p>
         </motion.div>
@@ -249,10 +209,10 @@ export default function ExperiencePage() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
             Core Competencies
           </h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-center text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Technologies I've mastered through hands-on project development
           </p>
         </motion.div>
@@ -263,14 +223,13 @@ export default function ExperiencePage() {
               key={skill.name}
               name={skill.name}
               level={skill.level}
-              icon={skill.icon}
               index={index}
             />
           ))}
         </div>
       </div>
 
-      {/* Education & Certifications Section */}
+      {/* Education & Achievements Section */}
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -279,9 +238,9 @@ export default function ExperiencePage() {
           className="max-w-4xl mx-auto"
         >
           <div className="glass rounded-2xl p-8 md:p-12 border border-border/50">
-            <div className="flex items-center gap-3 mb-6">
-              <Award className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl font-bold">Education & Achievements</h2>
+            <div className="flex items-center gap-3 mb-8">
+              <Award className="w-10 h-10 text-primary" />
+              <h2 className="text-3xl md:text-4xl font-bold">Education & Achievements</h2>
             </div>
 
             <div className="space-y-6">
@@ -295,10 +254,10 @@ export default function ExperiencePage() {
               >
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Bachelor of Science in Computer Science</h3>
-                  <p className="text-sm text-muted-foreground">Bahria University</p>
-                  <p className="text-xs text-muted-foreground mt-1">2022 - 2026</p>
-                  <p className="text-sm mt-2">
+                  <h3 className="font-semibold text-xl md:text-2xl mb-2">Bachelor of Science in Computer Science</h3>
+                  <p className="text-base md:text-lg text-muted-foreground">Bahria University</p>
+                  <p className="text-sm md:text-base text-muted-foreground mt-1">2022 - 2026</p>
+                  <p className="text-base md:text-lg mt-3">
                     Final Year Project: <span className="text-primary font-medium">Fluenti - AI-Powered Speech Therapy Platform</span>
                   </p>
                 </div>
@@ -315,7 +274,7 @@ export default function ExperiencePage() {
               >
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold mb-1">Relevant Coursework</h3>
+                  <h3 className="font-semibold text-lg md:text-xl mb-3">Relevant Coursework</h3>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {[
                       "Data Structures",
@@ -327,7 +286,7 @@ export default function ExperiencePage() {
                     ].map((course) => (
                       <span
                         key={course}
-                        className="text-xs px-3 py-1 bg-secondary rounded-full"
+                        className="text-sm md:text-base px-3 py-1 bg-secondary rounded-full"
                       >
                         {course}
                       </span>
@@ -347,8 +306,8 @@ export default function ExperiencePage() {
               >
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold mb-1">Notable Achievements</h3>
-                  <ul className="text-sm text-muted-foreground space-y-1 mt-2">
+                  <h3 className="font-semibold text-lg md:text-xl mb-3">Notable Achievements</h3>
+                  <ul className="text-base md:text-lg text-muted-foreground space-y-2 mt-2">
                     <li>• Successfully deployed production-ready AI healthcare application</li>
                     <li>• Integrated 5+ AI services (Gemini, OpenAI, Groq) in single platform</li>
                     <li>• Maintained 100% client satisfaction in freelance projects</li>
@@ -369,10 +328,10 @@ export default function ExperiencePage() {
       >
         <div className="max-w-3xl mx-auto text-center glass rounded-2xl p-12 space-y-6">
           <Rocket className="w-16 h-16 mx-auto text-primary" />
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-5xl font-bold">
             Let's Build Something Innovative Together
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             I'm excited to bring my skills to a dynamic team and contribute to meaningful projects.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -380,7 +339,7 @@ export default function ExperiencePage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="/contact"
-              className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold shadow-lg"
+              className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg shadow-lg"
             >
               Get In Touch
             </motion.a>
@@ -388,7 +347,7 @@ export default function ExperiencePage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="/projects"
-              className="px-8 py-4 glass rounded-lg font-semibold"
+              className="px-8 py-4 glass rounded-lg font-semibold text-lg"
             >
               View My Work
             </motion.a>
