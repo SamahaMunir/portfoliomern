@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Heart, Download, Code2, Briefcase } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, Download, Code2, Briefcase, Phone } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -38,8 +38,8 @@ export default function Footer() {
               <div className="flex gap-3 mb-6">
                 {[
                   { icon: Github, href: "https://github.com/SamahaMunir", label: "GitHub" },
-                  { icon: Linkedin, href: "https://linkedin.com/in/samahamunir", label: "LinkedIn" },
-                  { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+                  { icon: Linkedin, href: "https://linkedin.com/in/samaha-munir-b52834318", label: "LinkedIn" },
+                  { icon: Mail, href: "mailto:samimunir196@gmail.com", label: "Email" },
                 ].map(({ icon: Icon, href, label }) => (
                   <motion.a
                     key={label}
@@ -100,11 +100,11 @@ export default function Footer() {
             {/* Contact Info */}
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-xs text-muted-foreground mb-1">Email</p>
-                  <a href="mailto:your.email@example.com" className="hover:text-primary transition-colors break-all font-medium">
-                    your.email@example.com
+                  <p className="text-xs text-muted-foreground mb-1">Phone</p>
+                  <a href="tel:+92-303-4116557" className="hover:text-primary transition-colors break-all font-medium">
+                    +92-303-4116557
                   </a>
                 </div>
               </li>
@@ -112,7 +112,7 @@ export default function Footer() {
                 <span className="text-lg flex-shrink-0">📍</span>
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">Location</p>
-                  <span className="font-medium">Your City, Country</span>
+                  <span className="font-medium">Lahore, Pakistan</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -138,9 +138,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p className="flex items-center gap-2 flex-wrap justify-center">
               <span>© {currentYear} Samaha Munir.</span>
-              <span className="hidden sm:inline">Built with</span>
-              <Heart className="w-4 h-4 text-red-500 animate-pulse" />
-              <span className="hidden sm:inline">using MERN Stack</span>
+              <span className="hidden sm:inline">Built with MERN Stack</span>
             </p>
             <p className="font-medium">
               Designed & Developed by <span className="gradient-text font-semibold">Samaha Munir</span>
