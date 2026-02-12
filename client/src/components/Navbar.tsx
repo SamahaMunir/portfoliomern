@@ -26,13 +26,13 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold gradient-text cursor-pointer"
-            >
-              {"<SamahaMunir />"}
-            </motion.a>
-          </Link>
+  <motion.a
+    whileHover={{ scale: 1.05 }}
+    className="text-2xl font-bold gradient-text cursor-pointer"
+  >
+    {"<SamahaMunir />"}
+  </motion.a>
+</Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
