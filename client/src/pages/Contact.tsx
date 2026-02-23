@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -67,13 +68,15 @@ export default function Contact() {
           />
         </div>
         
-        <button
+        <motion.button
+          whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.4)" }}
+          whileTap={{ scale: 0.95 }}
           type="submit"
           disabled={mutation.isPending}
           className="w-full bg-primary text-primary-foreground p-3 rounded-lg font-semibold hover:opacity-90 transition"
         >
           {mutation.isPending ? "Sending..." : "Send Message"}
-        </button>
+        </motion.button>
       </form>
     </div>
   );
