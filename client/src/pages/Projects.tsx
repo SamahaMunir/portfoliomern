@@ -37,7 +37,7 @@ export default function Projects() {
       technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS", "Framer Motion"],
       githubUrl: "https://github.com/SamahaMunir/portfoliomern",
       liveUrl: null,
-      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+      imageUrl: "/projects/portfolio.png",
       stats: "Full Stack",
     },
     {
@@ -82,183 +82,233 @@ export default function Projects() {
     },
   ];
 
-  // Don't block rendering just for database projects
-  // if (isLoading) {
-  //   return <div className="container mx-auto px-4 py-20 text-center">Loading...</div>;
-  // }
-
   return (
-    <div className="container mx-auto px-4 py-20">
-      <h1 className="text-4xl font-bold text-center mb-12">My Projects</h1>
-      
-      {/* Featured Project */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="mb-20"
-      >
-        <div className="relative border-2 border-[hsl(160,84%,39%)] rounded-lg p-8 glass">
-          <div className="grid md:grid-cols-2 gap-8">
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Gradient Background - Same as Experience */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5 -z-10" />
+
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 pt-32 pb-20">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center space-y-8"
+          >
+            {/* Empty space for consistency */}
+            <div className="h-10" />
+
+            {/* Title */}
             <div>
-              <img 
-                src={fluentiFYP.imageUrl} 
-                alt={fluentiFYP.title}
-                className="w-full h-64 object-cover rounded-lg mb-4"
-              />
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+                <span className="gradient-text">My Projects</span>
+              </h1>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              >
+                Showcasing real projects I've built and deployed, from AI-powered healthcare platforms to full-stack web applications
+              </motion.p>
             </div>
-            <div>
-              <h2 className="text-3xl font-bold mb-4 gradient-text">{fluentiFYP.title}</h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">{fluentiFYP.description}</p>
-              
-              <div className="flex flex-wrap gap-2 mb-6">
-                {fluentiFYP.technologies.map((tech: string) => (
-                  <span key={tech} className="text-xs bg-[hsl(160,84%,39%)]/20 text-[hsl(160,84%,39%)] px-3 py-1 rounded-full font-medium">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              
-              <div className="flex gap-4">
-                <a 
-                  href={fluentiFYP.githubUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-[hsl(160,84%,39%)]/10 hover:bg-[hsl(160,84%,39%)]/20 border border-[hsl(160,84%,39%)]/30 rounded-lg font-medium transition-all"
-                >
-                  <Github className="w-5 h-5" /> View Code
-                </a>
-                <a 
-                  href={fluentiFYP.liveUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-[hsl(160,84%,39%)] text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-all"
-                >
-                  <ExternalLink className="w-5 h-5" /> Live Demo
-                </a>
-              </div>
-            </div>
+          </motion.div>
+        </div>
+      </div>
+
+     {/* Featured Project */}
+<div className="container mx-auto px-4 py-20">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="max-w-6xl mx-auto"
+  >
+    <div className="relative border-2 border-[hsl(160,84%,39%)] rounded-lg p-8 glass">
+      <div className="grid md:grid-cols-2 gap-8">
+        <div>
+          <img 
+            src={fluentiFYP.imageUrl} 
+            alt={fluentiFYP.title}
+            className="w-full h-64 object-cover rounded-lg mb-4"
+          />
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold mb-4 gradient-text">{fluentiFYP.title}</h2>
+          <p className="text-muted-foreground mb-6 leading-relaxed">{fluentiFYP.description}</p>
+          
+          <div className="flex flex-wrap gap-2 mb-6">
+            {fluentiFYP.technologies.map((tech: string) => (
+              <span key={tech} className="text-xs bg-[hsl(160,84%,39%)]/20 text-[hsl(160,84%,39%)] px-3 py-1 rounded-full font-medium">
+                {tech}
+              </span>
+            ))}
+          </div>
+          
+          <div className="flex gap-4">
+            <motion.a
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(16, 185, 129, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              href={fluentiFYP.githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-[hsl(160,84%,39%)]/10 hover:bg-[hsl(160,84%,39%)]/20 border border-[hsl(160,84%,39%)]/30 rounded-lg font-medium transition-all"
+            >
+              <Github className="w-5 h-5" /> View Code
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(16, 185, 129, 0.5)" }}
+              whileTap={{ scale: 0.95 }}
+              href={fluentiFYP.liveUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-[hsl(160,84%,39%)] text-white rounded-lg font-medium hover:bg-[hsl(160,84%,45%)] transition-all"
+            >
+              <ExternalLink className="w-5 h-5" /> Live Demo
+            </motion.a>
           </div>
         </div>
-      </motion.div>
+      </div>
+    </div>
+  </motion.div>
+</div>
 
-      {/* Other Projects - Minimal Design Inspired by Image */}
-      <div className="space-y-16 max-w-5xl mx-auto">
-        {otherProjects.map((project: any, index: number) => (
-          <motion.div
-            key={project._id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="group"
-          >
-            <div className="grid md:grid-cols-[300px_1fr] gap-8 items-start">
-              {/* Project Image */}
-              <a 
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="relative overflow-hidden rounded-xl border-2 border-border group-hover:border-[hsl(160,84%,39%)]/50 transition-all duration-300">
-                  <img 
-                    src={project.imageUrl} 
-                    alt={project.title}
-                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </a>
+      {/* Other Projects Section */}
+      <div className="container mx-auto px-4 py-20">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
+            Other Projects
+          </h2>
+          <p className="text-center text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Additional work from academic projects and freelance development
+          </p>
+        </motion.div>
 
-              {/* Project Content */}
-              <div className="space-y-4">
-                {/* Title with Link */}
+        <div className="space-y-16 max-w-5xl mx-auto">
+          {otherProjects.map((project: any, index: number) => (
+            <motion.div
+              key={project._id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group"
+            >
+              <div className="grid md:grid-cols-[300px_1fr] gap-8 items-start">
+                {/* Project Image */}
                 <a 
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 group/title"
+                  className="block"
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold group-hover/title:text-[hsl(160,84%,39%)] transition-colors">
-                    {project.title}
-                  </h3>
-                  <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover/title:text-[hsl(160,84%,39%)] transition-colors" />
-                </a>
-
-                {/* Description - One Line */}
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Stats Badge */}
-                {project.stats && (
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Star className="w-4 h-4" />
-                    <span className="text-sm font-medium">{project.stats}</span>
+                  <div className="relative overflow-hidden rounded-xl border-2 border-border group-hover:border-[hsl(160,84%,39%)]/50 transition-all duration-300">
+                    <img 
+                      src={project.imageUrl} 
+                      alt={project.title}
+                      className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                )}
-
-                {/* Technologies - Cyan Pills */}
-                <div className="flex flex-wrap gap-3 pt-2">
-                  {project.technologies?.map((tech: string) => (
-                    <span 
-                      key={tech} 
-                      className="px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary rounded-full border border-primary/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-
-        {/* Database projects if any */}
-        {dbProjects?.map((project: any, index: number) => (
-          <motion.div
-            key={project._id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: (otherProjects.length + index) * 0.1 }}
-            className="group"
-          >
-            <div className="grid md:grid-cols-[300px_1fr] gap-8 items-start">
-              <div className="relative overflow-hidden rounded-xl border-2 border-border">
-                <div className="w-full aspect-[4/3] bg-gradient-to-br from-primary/10 to-primary/5" />
-              </div>
-
-              <div className="space-y-4">
-                <a 
-                  href={project.githubUrl || "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 group/title"
-                >
-                  <h3 className="text-2xl md:text-3xl font-bold group-hover/title:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover/title:text-primary transition-colors" />
                 </a>
 
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
+                {/* Project Content */}
+                <div className="space-y-4">
+                  {/* Title with Link */}
+                  <a 
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 group/title"
+                  >
+                    <h3 className="text-2xl md:text-3xl font-bold group-hover/title:text-[hsl(160,84%,39%)] transition-colors">
+                      {project.title}
+                    </h3>
+                    <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover/title:text-[hsl(160,84%,39%)] transition-colors" />
+                  </a>
 
-                <div className="flex flex-wrap gap-3 pt-2">
-                  {project.technologies?.map((tech: string) => (
-                    <span 
-                      key={tech} 
-                      className="px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary rounded-full border border-primary/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  {/* Description */}
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Stats Badge */}
+                  {project.stats && (
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <Star className="w-4 h-4" />
+                      <span className="text-sm font-medium">{project.stats}</span>
+                    </div>
+                  )}
+
+                  {/* Technologies - EMERALD */}
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    {project.technologies?.map((tech: string) => (
+                      <span 
+                        key={tech} 
+                        className="px-4 py-1.5 text-sm font-medium bg-[hsl(160,84%,39%)]/10 text-[hsl(160,84%,39%)] rounded-full border border-[hsl(160,84%,39%)]/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+
+          {/* Database projects if any */}
+          {dbProjects?.map((project: any, index: number) => (
+            <motion.div
+              key={project._id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: (otherProjects.length + index) * 0.1 }}
+              className="group"
+            >
+              <div className="grid md:grid-cols-[300px_1fr] gap-8 items-start">
+                <div className="relative overflow-hidden rounded-xl border-2 border-border">
+                  <div className="w-full aspect-[4/3] bg-gradient-to-br from-[hsl(160,84%,39%)]/10 to-[hsl(160,84%,39%)]/5" />
+                </div>
+
+                <div className="space-y-4">
+                  <a 
+                    href={project.githubUrl || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 group/title"
+                  >
+                    <h3 className="text-2xl md:text-3xl font-bold group-hover/title:text-[hsl(160,84%,39%)] transition-colors">
+                      {project.title}
+                    </h3>
+                    <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover/title:text-[hsl(160,84%,39%)] transition-colors" />
+                  </a>
+
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    {project.technologies?.map((tech: string) => (
+                      <span 
+                        key={tech} 
+                        className="px-4 py-1.5 text-sm font-medium bg-[hsl(160,84%,39%)]/10 text-[hsl(160,84%,39%)] rounded-full border border-[hsl(160,84%,39%)]/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
