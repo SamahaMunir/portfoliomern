@@ -46,7 +46,7 @@ export default function Home() {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(100, 116, 139, 0.5)";
+        ctx.fillStyle = "rgba(64, 217, 164, 0.5)";
         ctx.fill();
       });
 
@@ -61,7 +61,7 @@ export default function Home() {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(100, 116, 139, ${0.2 - distance / 750})`;
+            ctx.strokeStyle = `rgba(64, 217, 164, ${0.2 - distance / 750})`;
             ctx.stroke();
           }
         });
@@ -134,7 +134,7 @@ export default function Home() {
               className="flex flex-wrap justify-center gap-4"
             >
               <motion.a
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(100, 116, 139, 0.4)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
                 href="#projects"
                 className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center gap-2 shadow-lg"
@@ -206,7 +206,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(100, 116, 139, 0.3)" }}
+              whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.3)" }}
               className="px-6 py-3 glass rounded-lg font-medium card-hover"
             >
               {tech}
