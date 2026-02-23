@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Sparkles } from "lucide-react";
+import { ExternalLink, Github, Star, ArrowUpRight } from "lucide-react";
 
 async function fetchProjects() {
   const res = await fetch("/api/projects");
@@ -9,9 +9,11 @@ async function fetchProjects() {
 }
 
 export default function Projects() {
-  const { data: dbProjects, isLoading } = useQuery({
+  const { data: dbProjects, isLoading, isError } = useQuery({
     queryKey: ["projects"],
     queryFn: fetchProjects,
+    retry: 1,
+    staleTime: 5000,
   });
 
   // Featured project (FYP)
@@ -20,7 +22,7 @@ export default function Projects() {
     title: "Fluenti - AI Speech Therapy Platform",
     description: "Comprehensive AI-powered platform combining interactive story-building games for speech therapy with emotional support sessions. Serves both children and adults using cutting-edge AI technology for personalized therapeutic experiences.",
     technologies: ["React", "Node.js", "MongoDB", "Python Flask", "Google Gemini", "OpenAI", "Groq", "TypeScript", "WebSocket"],
-    imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+    imageUrl: "/projects/fluenti img.PNG",
     githubUrl: "https://github.com/FYPFluenti/Fluenti",
     liveUrl: "https://fluenti-app.onrender.com/",
     featured: true,
@@ -31,44 +33,59 @@ export default function Projects() {
     {
       _id: "portfolio-mern",
       title: "Personal Portfolio",
-      description: "Modern portfolio website built with MERN stack featuring smooth animations, responsive design, and dark mode. Showcases projects, experience, and skills with an intuitive user interface.",
+      description: "Modern portfolio website built with MERN stack featuring smooth animations, responsive design, and dark mode showcasing professional experience and technical skills.",
       technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS", "Framer Motion"],
       githubUrl: "https://github.com/SamahaMunir/portfoliomern",
       liveUrl: null,
-      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+      stats: "Full Stack",
+    },
+    {
+      _id: "web-encryption-tool",
+      title: "Web Text Encryption Tool",
+      description: "Secure text encryption and decryption tool with multiple cipher algorithms including AES encryption, password protection, and secure key generation for data privacy.",
+      technologies: ["JavaScript", "CryptoJS", "HTML5", "CSS3"],
+      githubUrl: "https://github.com/SamahaMunir/web-text-encryption-tool",
+      liveUrl: null,
+      imageUrl: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop",
+      stats: "Security",
+    },
+    {
+      _id: "webcrawler-angular",
+      title: "Web Crawler",
+      description: "Intelligent web scraping application built with Angular that extracts and analyzes web data, parses HTML content, and provides structured data output for analysis.",
+      technologies: ["Angular", "TypeScript", "Node.js", "Cheerio"],
+      githubUrl: "https://github.com/SamahaMunir/WebCrawler-Angular",
+      liveUrl: null,
+      imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop",
+      stats: "Data Scraping",
     },
     {
       _id: "ecommerce-platform",
-      title: "E-Commerce Platform",
-      description: "Full-featured online store with product catalog, shopping cart, payment gateway integration, order management, and admin dashboard. Built for a client with real-time inventory tracking.",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe API", "JWT Auth"],
-      githubUrl: null,
+      title: "E-Commerce Store",
+      description: "Full-featured online store with product catalog, shopping cart, payment gateway integration, order management, and admin dashboard with real-time inventory tracking.",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe API"],
+      githubUrl: "https://github.com/MehakYahya/EcommerceStore",
       liveUrl: null,
-      imageUrl: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+      imageUrl: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
+      stats: "Collaborative",
     },
     {
-      _id: "weather-dashboard",
-      title: "Weather Dashboard",
-      description: "Real-time weather application with location-based forecasts, interactive maps, 7-day predictions, and severe weather alerts. Integrates multiple weather APIs for comprehensive data.",
-      technologies: ["React", "TypeScript", "OpenWeather API", "Chart.js", "Tailwind CSS"],
-      githubUrl: null,
+      _id: "ecomate",
+      title: "EcoMate",
+      description: "Environmental awareness application tracking carbon footprint, sustainability metrics, and eco-friendly habits with data visualization and personalized recommendations.",
+      technologies: ["React", "Node.js", "MongoDB", "Chart.js"],
+      githubUrl: "https://github.com/SamahaMunir/EcoMate",
       liveUrl: null,
-      imageUrl: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
-    },
-    {
-      _id: "social-network",
-      title: "Social Network App",
-      description: "Social platform with user profiles, posts, likes, comments, real-time messaging, friend requests, and news feed. Academic project demonstrating full-stack development capabilities.",
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Redux", "Bootstrap"],
-      githubUrl: null,
-      liveUrl: null,
-      imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
+      imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop",
+      stats: "Green Tech",
     },
   ];
 
-  if (isLoading) {
-    return <div className="container mx-auto px-4 py-20 text-center">Loading...</div>;
-  }
+  // Don't block rendering just for database projects
+  // if (isLoading) {
+  //   return <div className="container mx-auto px-4 py-20 text-center">Loading...</div>;
+  // }
 
   return (
     <div className="container mx-auto px-4 py-20">
@@ -78,7 +95,7 @@ export default function Projects() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-12"
+        className="mb-20"
       >
         <div className="relative border-2 border-primary rounded-lg p-8 glass">
           <div className="grid md:grid-cols-2 gap-8">
@@ -124,58 +141,73 @@ export default function Projects() {
         </div>
       </motion.div>
 
-      {/* Other Projects */}
-      <h2 className="text-2xl font-bold mb-6">Other Projects</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Other Projects - Minimal Design Inspired by Image */}
+      <div className="space-y-16 max-w-5xl mx-auto">
         {otherProjects.map((project: any, index: number) => (
           <motion.div
             key={project._id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="border border-border rounded-lg overflow-hidden hover:shadow-lg transition group"
+            className="group"
           >
-            {/* Project Image */}
-            <div className="relative h-48 overflow-hidden bg-muted">
-              <img 
-                src={project.imageUrl} 
-                alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
+            <div className="grid md:grid-cols-[300px_1fr] gap-8 items-start">
+              {/* Project Image */}
+              <a 
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="relative overflow-hidden rounded-xl border-2 border-border group-hover:border-primary/50 transition-all duration-300">
+                  <img 
+                    src={project.imageUrl} 
+                    alt={project.title}
+                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </a>
 
-            {/* Project Content */}
-            <div className="p-6">
-              <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                {project.description}
-              </p>
-              
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies?.map((tech: string) => (
-                  <span key={tech} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              
-              <div className="flex gap-3">
-                {project.githubUrl ? (
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
-                     className="flex items-center gap-1 text-sm hover:text-primary transition">
-                    <Github className="w-4 h-4" /> Code
-                  </a>
-                ) : (
-                  <span className="text-xs text-muted-foreground italic">Private Repository</span>
+              {/* Project Content */}
+              <div className="space-y-4">
+                {/* Title with Link */}
+                <a 
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 group/title"
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold group-hover/title:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover/title:text-primary transition-colors" />
+                </a>
+
+                {/* Description - One Line */}
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* Stats Badge */}
+                {project.stats && (
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <Star className="w-4 h-4" />
+                    <span className="text-sm font-medium">{project.stats}</span>
+                  </div>
                 )}
-                {project.liveUrl && (
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
-                     className="flex items-center gap-1 text-sm hover:text-primary transition">
-                    <ExternalLink className="w-4 h-4" /> Live
-                  </a>
-                )}
+
+                {/* Technologies - Cyan Pills */}
+                <div className="flex flex-wrap gap-3 pt-2">
+                  {project.technologies?.map((tech: string) => (
+                    <span 
+                      key={tech} 
+                      className="px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary rounded-full border border-primary/20"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -185,35 +217,45 @@ export default function Projects() {
         {dbProjects?.map((project: any, index: number) => (
           <motion.div
             key={project._id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: (otherProjects.length + index) * 0.1 }}
-            className="border border-border rounded-lg p-6 hover:shadow-lg transition"
+            className="group"
           >
-            <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
-            <p className="text-muted-foreground mb-4">{project.description}</p>
-            
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.technologies?.map((tech: string) => (
-                <span key={tech} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            
-            <div className="flex gap-3">
-              {project.githubUrl && (
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
-                   className="flex items-center gap-1 text-sm hover:text-primary transition">
-                  <Github className="w-4 h-4" /> Code
+            <div className="grid md:grid-cols-[300px_1fr] gap-8 items-start">
+              <div className="relative overflow-hidden rounded-xl border-2 border-border">
+                <div className="w-full aspect-[4/3] bg-gradient-to-br from-primary/10 to-primary/5" />
+              </div>
+
+              <div className="space-y-4">
+                <a 
+                  href={project.githubUrl || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 group/title"
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold group-hover/title:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover/title:text-primary transition-colors" />
                 </a>
-              )}
-              {project.liveUrl && (
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
-                   className="flex items-center gap-1 text-sm hover:text-primary transition">
-                  <ExternalLink className="w-4 h-4" /> Live
-                </a>
-              )}
+
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-3 pt-2">
+                  {project.technologies?.map((tech: string) => (
+                    <span 
+                      key={tech} 
+                      className="px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary rounded-full border border-primary/20"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
         ))}
