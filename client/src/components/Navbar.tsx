@@ -39,7 +39,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}>
                 <a
-                  className={`relative text-sm font-medium transition-colors hover:text-primary ${
+                  className={`relative text-sm font-medium transition-colors hover:text-hover ${
                     location === item.path ? "text-primary" : ""
                   }`}
                 >
@@ -62,7 +62,7 @@ export default function Navbar() {
               href="https://github.com/SamahaMunir"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition"
+              className="text-muted-foreground hover:text-hover transition"
             >
               <Github className="w-5 h-5" />
             </motion.a>
@@ -71,7 +71,7 @@ export default function Navbar() {
               href="https://linkedin.com/in/samaha-munir-b52834318"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition"
+              className="text-muted-foreground hover:text-hover transition"
             >
               <Linkedin className="w-5 h-5" />
             </motion.a>
@@ -99,7 +99,7 @@ export default function Navbar() {
               <Link key={item.path} href={item.path}>
                 <a
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 hover:text-primary transition"
+                  className="block py-2 hover:text-hover transition"
                 >
                   {item.label}
                 </a>
