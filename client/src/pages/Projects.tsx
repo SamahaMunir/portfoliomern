@@ -97,7 +97,7 @@ export default function Projects() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-20"
       >
-        <div className="relative border-2 border-primary rounded-lg p-8 glass">
+        <div className="relative border-2 border-[hsl(160,84%,39%)] rounded-lg p-8 glass">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <img 
@@ -112,7 +112,7 @@ export default function Projects() {
               
               <div className="flex flex-wrap gap-2 mb-6">
                 {fluentiFYP.technologies.map((tech: string) => (
-                  <span key={tech} className="text-xs bg-primary/20 text-primary px-3 py-1 rounded-full font-medium">
+                  <span key={tech} className="text-xs bg-[hsl(160,84%,39%)]/20 text-[hsl(160,84%,39%)] px-3 py-1 rounded-full font-medium">
                     {tech}
                   </span>
                 ))}
@@ -123,7 +123,7 @@ export default function Projects() {
                   href={fluentiFYP.githubUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-lg font-medium transition-all"
+                  className="flex items-center gap-2 px-6 py-3 bg-[hsl(160,84%,39%)]/10 hover:bg-[hsl(160,84%,39%)]/20 border border-[hsl(160,84%,39%)]/30 rounded-lg font-medium transition-all"
                 >
                   <Github className="w-5 h-5" /> View Code
                 </a>
@@ -131,7 +131,7 @@ export default function Projects() {
                   href={fluentiFYP.liveUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-all"
+                  className="flex items-center gap-2 px-6 py-3 bg-[hsl(160,84%,39%)] text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-all"
                 >
                   <ExternalLink className="w-5 h-5" /> Live Demo
                 </a>
@@ -160,7 +160,7 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className="relative overflow-hidden rounded-xl border-2 border-border group-hover:border-primary/50 transition-all duration-300">
+                <div className="relative overflow-hidden rounded-xl border-2 border-border group-hover:border-[hsl(160,84%,39%)]/50 transition-all duration-300">
                   <img 
                     src={project.imageUrl} 
                     alt={project.title}
@@ -178,10 +178,10 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 group/title"
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold group-hover/title:text-primary transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-bold group-hover/title:text-[hsl(160,84%,39%)] transition-colors">
                     {project.title}
                   </h3>
-                  <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover/title:text-primary transition-colors" />
+                  <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover/title:text-[hsl(160,84%,39%)] transition-colors" />
                 </a>
 
                 {/* Description - One Line */}
