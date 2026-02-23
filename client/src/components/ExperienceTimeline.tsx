@@ -24,7 +24,7 @@ export default function ExperienceTimeline({ experiences }: ExperienceTimelinePr
             className="relative md:pl-16"
           >
             {/* Timeline Dot */}
-            <div className="hidden md:block absolute left-0 top-2 w-3 h-3 rounded-full bg-primary border-4 border-background -translate-x-1/2" />
+            <div className="hidden md:block absolute left-0 top-2 w-3 h-3 rounded-full bg-[hsl(160,84%,39%)] border-4 border-background -translate-x-1/2" />
 
             <div className="group">
               {/* Date Range */}
@@ -74,7 +74,7 @@ export default function ExperienceTimeline({ experiences }: ExperienceTimelinePr
                   <ul className="space-y-2 text-base md:text-lg text-muted-foreground">
                     {exp.achievements.slice(0, 3).map((achievement, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
+                        <span className="text-[hsl(160,84%,39%)] mt-1">•</span>
                         <span>{achievement}</span>
                       </li>
                     ))}
@@ -87,7 +87,7 @@ export default function ExperienceTimeline({ experiences }: ExperienceTimelinePr
                 {exp.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-4 py-2 text-sm md:text-base font-medium bg-primary/10 text-primary rounded-full border border-primary/20 hover:bg-primary/20 transition-colors"
+                    className="px-4 py-2 text-sm md:text-base font-medium bg-[hsl(160,84%,39%)]/10 text-[hsl(160,84%,39%)] rounded-full border border-[hsl(160,84%,39%)]/20 hover:bg-[hsl(160,84%,39%)]/20 transition-colors"
                   >
                     {tech}
                   </span>
