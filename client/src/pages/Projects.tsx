@@ -149,22 +149,22 @@ export default function Projects() {
           
           <div className="flex gap-4">
             <motion.a
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(16, 185, 129, 0.4)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               href={fluentiFYP.githubUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-[hsl(160,84%,39%)]/10 hover:bg-[hsl(160,84%,39%)]/20 border border-[hsl(160,84%,39%)]/30 rounded-lg font-medium transition-all"
+              className="flex items-center gap-2 px-6 py-3 bg-secondary/50 hover:bg-secondary/70 border border-border rounded-lg font-medium transition-all"
             >
               <Github className="w-5 h-5" /> View Code
             </motion.a>
             <motion.a
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(16, 185, 129, 0.5)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               href={fluentiFYP.liveUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-[hsl(160,84%,39%)] text-white rounded-lg font-medium hover:bg-[hsl(160,84%,45%)] transition-all"
+              className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-all"
             >
               <ExternalLink className="w-5 h-5" /> Live Demo
             </motion.a>
