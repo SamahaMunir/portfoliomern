@@ -112,41 +112,69 @@ const topSkills = [
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen pt-32 pb-20">
-      {/* Hero Section - More spacing from navbar */}
-      <div className="container mx-auto px-4 mb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-3xl mx-auto space-y-6"
-        >
-          {/* Title */}
-          <h1 className="text-4xl md:text-6xl font-bold">
-            <span className="gradient-text">Work Experience</span>
-          </h1>
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Gradient Background - Same as Home */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5 -z-10" />
 
-          {/* Description */}
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Recent Computer Science graduate specializing in full-stack development with the MERN stack. 
-            Successfully delivered Fluenti, an AI-powered healthcare platform, and multiple freelance projects.
-          </p>
-
-          {/* Download Resume Button */}
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="/resume.pdf"
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold shadow-lg"
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 pt-32 pb-20">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center space-y-8"
           >
-            <Download className="w-4 h-4" />
-            Download Resume
-          </motion.a>
-        </motion.div>
+            {/* Empty space for consistency with Home */}
+            <div className="h-10" />
+
+            {/* Title */}
+            <div>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+                <span className="gradient-text">Work Experience</span>
+              </h1>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              >
+                Recent Computer Science graduate specializing in full-stack development with the MERN stack. 
+                Successfully delivered Fluenti, an AI-powered healthcare platform, and multiple freelance projects.
+              </motion.p>
+            </div>
+
+            {/* Download Resume Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+            >
+              <motion.a
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                href="/resume.pdf"
+                download
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold shadow-lg"
+              >
+                <Download className="w-5 h-5" />
+                Download Resume
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Stats Section - Professional */}
-      <div className="container mx-auto px-4 mb-24">
+      {/* Stats Section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.9 }}
+        className="container mx-auto px-4 py-20"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {[
@@ -160,7 +188,7 @@ export default function ExperiencePage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
                 whileHover={{ 
                   scale: 1.1,
                   transition: { type: "spring", stiffness: 300, damping: 15 }
@@ -180,20 +208,20 @@ export default function ExperiencePage() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Timeline Section */}
-      <div className="container mx-auto px-4 mb-20">
+      <div className="container mx-auto px-4 py-20">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
             Career Timeline
           </h2>
-          <p className="text-center text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-center text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             From academic projects to production-ready AI platform - my journey in software engineering
           </p>
         </motion.div>
@@ -201,23 +229,23 @@ export default function ExperiencePage() {
         <ExperienceTimeline experiences={experiences} />
       </div>
 
-      {/* Top Skills Section */}
-      <div className="container mx-auto px-4 mb-20">
+      {/* Skills Section */}
+      <div className="container mx-auto px-4 py-20">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
             Core Competencies
           </h2>
-          <p className="text-center text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-center text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Technologies I've mastered through hands-on project development
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {topSkills.map((skill, index) => (
             <SkillBadge
               key={skill.name}
@@ -229,8 +257,8 @@ export default function ExperiencePage() {
         </div>
       </div>
 
-      {/* Education & Achievements Section */}
-      <div className="container mx-auto px-4">
+      {/* Education Section */}
+      <div className="container mx-auto px-4 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -238,19 +266,19 @@ export default function ExperiencePage() {
           className="max-w-4xl mx-auto"
         >
           <div className="glass rounded-2xl p-8 md:p-12 border border-border/50">
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-12">
               <Award className="w-10 h-10 text-primary" />
               <h2 className="text-3xl md:text-4xl font-bold">Education & Achievements</h2>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               {/* Education */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-3 p-4 rounded-lg hover:bg-primary/5 transition-colors"
+                className="flex items-start gap-4 p-6 rounded-lg hover:bg-primary/5 transition-colors"
               >
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
@@ -270,12 +298,12 @@ export default function ExperiencePage() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-3 p-4 rounded-lg hover:bg-primary/5 transition-colors"
+                className="flex items-start gap-4 p-6 rounded-lg hover:bg-primary/5 transition-colors"
               >
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-lg md:text-xl mb-3">Relevant Coursework</h3>
-                  <div className="flex flex-wrap gap-2 mt-2">
+                  <div className="flex flex-wrap gap-3 mt-2">
                     {[
                       "Data Structures",
                       "Algorithms",
@@ -286,7 +314,7 @@ export default function ExperiencePage() {
                     ].map((course) => (
                       <span
                         key={course}
-                        className="text-sm md:text-base px-3 py-1 bg-secondary rounded-full"
+                        className="text-sm md:text-base px-4 py-2 bg-secondary rounded-full"
                       >
                         {course}
                       </span>
@@ -302,12 +330,12 @@ export default function ExperiencePage() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-3 p-4 rounded-lg hover:bg-primary/5 transition-colors"
+                className="flex items-start gap-4 p-6 rounded-lg hover:bg-primary/5 transition-colors"
               >
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-lg md:text-xl mb-3">Notable Achievements</h3>
-                  <ul className="text-base md:text-lg text-muted-foreground space-y-2 mt-2">
+                  <ul className="text-base md:text-lg text-muted-foreground space-y-3 mt-2">
                     <li>• Successfully deployed production-ready AI healthcare application</li>
                     <li>• Integrated 5+ AI services (Gemini, OpenAI, Groq) in single platform</li>
                     <li>• Maintained 100% client satisfaction in freelance projects</li>
@@ -324,7 +352,7 @@ export default function ExperiencePage() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="container mx-auto px-4 mt-20"
+        className="container mx-auto px-4 py-20"
       >
         <div className="max-w-3xl mx-auto text-center glass rounded-2xl p-12 space-y-6">
           <Rocket className="w-16 h-16 mx-auto text-primary" />
@@ -336,7 +364,7 @@ export default function ExperiencePage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               href="/contact"
               className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg shadow-lg"
@@ -344,7 +372,7 @@ export default function ExperiencePage() {
               Get In Touch
             </motion.a>
             <motion.a
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.3)" }}
               whileTap={{ scale: 0.95 }}
               href="/projects"
               className="px-8 py-4 glass rounded-lg font-semibold text-lg"
