@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Download, ArrowDown, Code2, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, Download, ArrowDown } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
@@ -46,7 +46,7 @@ export default function Home() {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(102, 126, 234, 0.5)";
+        ctx.fillStyle = "rgba(100, 116, 139, 0.5)";
         ctx.fill();
       });
 
@@ -61,7 +61,7 @@ export default function Home() {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(102, 126, 234, ${0.2 - distance / 750})`;
+            ctx.strokeStyle = `rgba(100, 116, 139, ${0.2 - distance / 750})`;
             ctx.stroke();
           }
         });
@@ -101,16 +101,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center space-y-8"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass"
-            >
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">Available for hire</span>
-            </motion.div>
+            {/* Empty space to maintain exact spacing */}
+            <div className="h-10" />
 
             {/* Main Heading */}
             <div>
@@ -142,7 +134,7 @@ export default function Home() {
               className="flex flex-wrap justify-center gap-4"
             >
               <motion.a
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(102, 126, 234, 0.4)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(100, 116, 139, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
                 href="#projects"
                 className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center gap-2 shadow-lg"
@@ -206,7 +198,7 @@ export default function Home() {
           {[
             "React", "Node.js", "MongoDB", "Express",
             "TypeScript", "Tailwind CSS", 
-           "Git", "REST APIs", "GraphQL"
+            "Git", "REST APIs", "GraphQL"
           ].map((tech, index) => (
             <motion.div
               key={tech}
@@ -214,7 +206,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(102, 126, 234, 0.3)" }}
+              whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(100, 116, 139, 0.3)" }}
               className="px-6 py-3 glass rounded-lg font-medium card-hover"
             >
               {tech}
