@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Sparkles } from "lucide-react";
 
 async function fetchProjects() {
   const res = await fetch("/api/projects");
@@ -9,7 +9,7 @@ async function fetchProjects() {
 }
 
 export default function Projects() {
-  const { data: projects, isLoading } = useQuery({
+  const { data: dbProjects, isLoading } = useQuery({
     queryKey: ["projects"],
     queryFn: fetchProjects,
   });
@@ -26,6 +26,46 @@ export default function Projects() {
     featured: true,
   };
 
+  // Your other notable projects
+  const otherProjects = [
+    {
+      _id: "portfolio-mern",
+      title: "Personal Portfolio",
+      description: "Modern portfolio website built with MERN stack featuring smooth animations, responsive design, and dark mode. Showcases projects, experience, and skills with an intuitive user interface.",
+      technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS", "Framer Motion"],
+      githubUrl: "https://github.com/SamahaMunir/portfoliomern",
+      liveUrl: null,
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "ecommerce-platform",
+      title: "E-Commerce Platform",
+      description: "Full-featured online store with product catalog, shopping cart, payment gateway integration, order management, and admin dashboard. Built for a client with real-time inventory tracking.",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe API", "JWT Auth"],
+      githubUrl: null,
+      liveUrl: null,
+      imageUrl: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "weather-dashboard",
+      title: "Weather Dashboard",
+      description: "Real-time weather application with location-based forecasts, interactive maps, 7-day predictions, and severe weather alerts. Integrates multiple weather APIs for comprehensive data.",
+      technologies: ["React", "TypeScript", "OpenWeather API", "Chart.js", "Tailwind CSS"],
+      githubUrl: null,
+      liveUrl: null,
+      imageUrl: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
+    },
+    {
+      _id: "social-network",
+      title: "Social Network App",
+      description: "Social platform with user profiles, posts, likes, comments, real-time messaging, friend requests, and news feed. Academic project demonstrating full-stack development capabilities.",
+      technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Redux", "Bootstrap"],
+      githubUrl: null,
+      liveUrl: null,
+      imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
+    },
+  ];
+
   if (isLoading) {
     return <div className="container mx-auto px-4 py-20 text-center">Loading...</div>;
   }
@@ -41,9 +81,6 @@ export default function Projects() {
         className="mb-12"
       >
         <div className="relative border-2 border-primary rounded-lg p-8 glass">
-          <div className="absolute -top-4 left-8 bg-background px-4 py-1 rounded-full border border-primary">
-            <span className="text-sm font-semibold text-primary">⭐ Featured Project - Final Year Project</span>
-          </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <img 
@@ -90,12 +127,67 @@ export default function Projects() {
       {/* Other Projects */}
       <h2 className="text-2xl font-bold mb-6">Other Projects</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects?.map((project: any, index: number) => (
+        {otherProjects.map((project: any, index: number) => (
           <motion.div
             key={project._id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
+            className="border border-border rounded-lg overflow-hidden hover:shadow-lg transition group"
+          >
+            {/* Project Image */}
+            <div className="relative h-48 overflow-hidden bg-muted">
+              <img 
+                src={project.imageUrl} 
+                alt={project.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+
+            {/* Project Content */}
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                {project.description}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.technologies?.map((tech: string) => (
+                  <span key={tech} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              
+              <div className="flex gap-3">
+                {project.githubUrl ? (
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
+                     className="flex items-center gap-1 text-sm hover:text-primary transition">
+                    <Github className="w-4 h-4" /> Code
+                  </a>
+                ) : (
+                  <span className="text-xs text-muted-foreground italic">Private Repository</span>
+                )}
+                {project.liveUrl && (
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
+                     className="flex items-center gap-1 text-sm hover:text-primary transition">
+                    <ExternalLink className="w-4 h-4" /> Live
+                  </a>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+
+        {/* Database projects if any */}
+        {dbProjects?.map((project: any, index: number) => (
+          <motion.div
+            key={project._id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: (otherProjects.length + index) * 0.1 }}
             className="border border-border rounded-lg p-6 hover:shadow-lg transition"
           >
             <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
