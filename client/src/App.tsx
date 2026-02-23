@@ -2,6 +2,7 @@ import { Route, Switch } from "wouter";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
+import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" component={Home} />
           <Route path="/projects" component={Projects} />
           <Route path="/experience" component={Experience} />
+          <Route path="/skills" component={Skills} />
           <Route path="/contact" component={Contact} />
         </Switch>
       </main>
