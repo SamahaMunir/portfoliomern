@@ -23,8 +23,8 @@ export default function ExperienceTimeline({ experiences }: ExperienceTimelinePr
             transition={{ duration: 0.5, delay: index * 0.2 }}
             className="relative md:pl-16"
           >
-            {/* Timeline Dot */}
-            <div className="hidden md:block absolute left-0 top-2 w-3 h-3 rounded-full bg-[hsl(160,84%,39%)] border-4 border-background -translate-x-1/2" />
+            {/* Timeline Dot - GREY */}
+            <div className="hidden md:block absolute left-0 top-2 w-3 h-3 rounded-full bg-muted-foreground border-4 border-background -translate-x-1/2" />
 
             <div className="group">
               {/* Date Range */}
@@ -68,13 +68,13 @@ export default function ExperienceTimeline({ experiences }: ExperienceTimelinePr
                 {exp.description}
               </p>
 
-              {/* Key Achievements - Condensed */}
+              {/* Key Achievements - Condensed - GREY BULLETS */}
               {exp.achievements && exp.achievements.length > 0 && (
                 <div className="mb-6 max-w-4xl">
                   <ul className="space-y-2 text-base md:text-lg text-muted-foreground">
                     {exp.achievements.slice(0, 3).map((achievement, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-[hsl(160,84%,39%)] mt-1">•</span>
+                        <span className="text-muted-foreground mt-1">•</span>
                         <span>{achievement}</span>
                       </li>
                     ))}
