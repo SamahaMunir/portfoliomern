@@ -146,7 +146,7 @@ export default function Home() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="/resume.pdf"
+                href="/Samaha Munir CV.pdf"
                 download
                 className="px-8 py-4 glass rounded-lg font-semibold flex items-center gap-2"
               >
