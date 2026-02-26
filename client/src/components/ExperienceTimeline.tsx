@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Calendar, ExternalLink, ArrowUpRight } from "lucide-react";
+import { MapPin, ArrowUpRight } from "lucide-react";
 import type { Experience } from "../types/experience";
 
 interface ExperienceTimelineProps {
