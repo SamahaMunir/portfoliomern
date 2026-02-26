@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
