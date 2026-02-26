@@ -9,7 +9,7 @@ async function fetchProjects() {
 }
 
 export default function Projects() {
-  const { data: dbProjects, isLoading, isError } = useQuery({
+  const { data: dbProjects } = useQuery({
     queryKey: ["projects"],
     queryFn: fetchProjects,
     retry: 1,
