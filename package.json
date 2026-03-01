@@ -3,14 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "dev:backend": "tsx server/index.ts",
-    "dev:frontend": "vite",
-    "build": "npm run build:frontend && npm run build:backend",
-    "build:frontend": "vite build",
-    "build:backend": "npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/backend.js",
-    "start": "NODE_ENV=production node dist/backend.js",
-    "check": "tsc"
+  "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+  "dev:backend": "tsx server/index.ts",
+  "dev:frontend": "vite",
+  "build": "vite build",
+  "start": "tsx server/index.ts",
+  "check": "tsc"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
