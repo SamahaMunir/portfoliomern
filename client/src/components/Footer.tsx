@@ -60,7 +60,7 @@ export default function Footer() {
               <motion.a
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                href="/resume.pdf"
+                href="/Samaha Munir CV.pdf"
                 download
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-lg font-medium transition-all"
               >

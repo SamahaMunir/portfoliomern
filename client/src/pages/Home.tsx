@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Download, ArrowDown } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { Link } from "wouter";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -133,15 +134,16 @@ export default function Home() {
               transition={{ delay: 0.7 }}
               className="flex flex-wrap justify-center gap-4"
             >
-              <motion.a
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.4)" }}
-                whileTap={{ scale: 0.95 }}
-                href="#projects"
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center gap-2 shadow-lg"
-              >
-                View My Work
-                <ArrowDown className="w-4 h-4 animate-bounce" />
-              </motion.a>
+              <Link href="/projects">
+                <motion.a
+                  whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.4)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center gap-2 shadow-lg cursor-pointer"
+                >
+                  View My Work
+                  <ArrowDown className="w-4 h-4 animate-bounce" />
+                </motion.a>
+              </Link>
 
               <motion.a
                 whileHover={{ scale: 1.05 }}
