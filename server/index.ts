@@ -23,12 +23,12 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from React build in production
 if (process.env.NODE_ENV === "production") {
-  // Serve static files
-  app.use(express.static(path.join(__dirname, "../dist")));
+  // Serve static files from dist/public (matching Vite output)
+  app.use(express.static(path.join(__dirname, "../dist/public")));
   
   // Handle React routing - return index.html for all routes
   app.get("*", (_req, res) => {
-    res.sendFile(path.join(__dirname, "../dist/index.html"));
+    res.sendFile(path.join(__dirname, "../dist/public/index.html"));
   });
 }
 
