@@ -30,6 +30,16 @@ export default function Projects() {
 
   // Your other notable projects
   const otherProjects = [
+     {
+      _id: "ecomate",
+      title: "EcoMate",
+      description: "Environmental awareness application tracking carbon footprint, sustainability metrics, and eco-friendly habits with data visualization and personalized recommendations.",
+      technologies: ["React", "Node.js", "MongoDB", "Chart.js"],
+      githubUrl: "https://github.com/SamahaMunir/EcoMate",
+      liveUrl: null,
+      imageUrl: "/projects/ecomate.PNG",
+      stats: "Green Tech",
+    },
     {
       _id: "portfolio-mern",
       title: "Personal Portfolio",
@@ -70,16 +80,7 @@ export default function Projects() {
       imageUrl: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
       stats: "Collaborative",
     },
-    {
-      _id: "ecomate",
-      title: "EcoMate",
-      description: "Environmental awareness application tracking carbon footprint, sustainability metrics, and eco-friendly habits with data visualization and personalized recommendations.",
-      technologies: ["React", "Node.js", "MongoDB", "Chart.js"],
-      githubUrl: "https://github.com/SamahaMunir/EcoMate",
-      liveUrl: null,
-      imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop",
-      stats: "Green Tech",
-    },
+   
   ];
 
   return (
