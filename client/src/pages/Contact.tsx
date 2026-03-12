@@ -27,7 +27,7 @@ export default function Contact() {
       setFormData({ name: "", email: "", message: "" });
     },
     onError: () => {
-      alert("Failed to send message. Please try again or email me directly at samimunir196@gmail.com");
+      alert("Failed to send message. Please try again or email me directly at samahamunir14@gmail.com");
     },
   });
 
@@ -104,7 +104,7 @@ export default function Contact() {
 
         {mutation.isError && (
           <p className="text-red-500 text-center text-sm">
-            Failed to send. Please email me directly at samimunir196@gmail.com
+            Failed to send. Please email me directly at samahamunir14@gmail.com
           </p>
         )}
       </motion.form>
@@ -113,10 +113,10 @@ export default function Contact() {
         <p className="text-muted-foreground mb-4">Or reach me directly:</p>
         <div className="flex flex-col items-center gap-2">
           <a 
-            href="mailto:samimunir196@gmail.com"
+            href="mailto:samahamunir14@gmail.com"
             className="text-primary hover:underline"
           >
-            samimunir196@gmail.com
+            samahamunir14@gmail.com
           </a>
           <a 
             href="https://linkedin.com/in/samaha-munir-b52834318"

@@ -37,16 +37,16 @@ export default function Footer() {
               {/* Social Links */}
               <div className="flex gap-3 mb-6">
                 {[
-                  { icon: Github, href: "https://github.com/SamahaMunir", label: "GitHub" },
-                  { icon: Linkedin, href: "https://linkedin.com/in/samaha-munir-b52834318", label: "LinkedIn" },
-                  { icon: Mail, href: "mailto:samimunir196@gmail.com", label: "Email" },
-                ].map(({ icon: Icon, href, label }) => (
+                  { icon: Github, href: "https://github.com/SamahaMunir", label: "GitHub", target: "_blank" },
+                  { icon: Linkedin, href: "https://linkedin.com/in/samaha-munir-b52834318", label: "LinkedIn", target: "_blank" },
+                  { icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=samahamunir14@gmail.com", label: "Email", target: "_blank" },
+                ].map(({ icon: Icon, href, label, target }) => (
                   <motion.a
                     key={label}
                     whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                     href={href}
-                    target="_blank"
+                    target={target}
                     rel="noopener noreferrer"
                     className="p-3 glass rounded-lg hover:bg-primary/10 hover:border-primary/30 border border-transparent transition-all duration-300"
                     aria-label={label}
@@ -60,7 +60,7 @@ export default function Footer() {
               <motion.a
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                href="/Samaha Munir CV.pdf"
+                href="/Samaha_Munir_resume.pdf"
                 download
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-lg font-medium transition-all"
               >
