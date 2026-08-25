@@ -4,7 +4,7 @@ import Project from "../models/Project.js";
 const router = express.Router();
 
 // Get all projects
-router.get("/", async (req, res) => {
+router.get("/", async (_req, res) => {
   try {
     const projects = await Project.find().sort({ createdAt: -1 });
     res.json(projects);
