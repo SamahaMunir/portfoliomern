@@ -1,7 +1,32 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Star, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, Star, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { useEffect } from "react";
 
 export default function Projects() {
+  // wouter does not scroll to hash targets on navigation, so do it here.
+  useEffect(() => {
+    const id = window.location.hash.replace("#", "");
+    if (!id) return;
+
+    // Let the entrance animations lay out before measuring.
+    const timer = setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Flagship production project
+  const intikhab = {
+    _id: "intikhab-e-zauj",
+    title: "Intikhab-e-Zauj",
+    subtitle: "Falah Khandan Center — Guided Matrimonial Platform",
+    description:
+      "A production, staff-mediated matrimonial platform built end-to-end for Falah Khandan Center. Combines a transparent rule-based matching engine (hard filters plus weighted 100-point scoring) with a RAG-powered AI insights layer that assists staff without replacing human judgment. Privacy is enforced at the API: server-side photo access control with per-consent reveal, plus on-device face verification on upload.",
+    technologies: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "RAG", "Multi-LLM", "Cloudinary", "Vercel", "Render"],
+    liveUrl: "https://intikhab-e-zauj.org",
+  };
+
   // Featured project (FYP)
   const fluentiFYP = {
     _id: "fluenti-fyp",
@@ -104,6 +129,58 @@ export default function Projects() {
             </div>
           </motion.div>
         </div>
+      </div>
+
+      {/* Flagship Project */}
+      <div id={intikhab._id} className="container mx-auto px-4 pb-20 scroll-mt-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-6xl mx-auto"
+        >
+          <div className="relative border-2 border-[hsl(160,84%,39%)] rounded-lg p-8 glass">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="relative overflow-hidden rounded-lg border border-border h-64 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-[hsl(160,84%,39%)]/15 to-purple-500/10">
+                <ShieldCheck className="w-12 h-12 text-[hsl(160,84%,39%)]" />
+                <span className="text-sm font-medium text-muted-foreground px-6 text-center">
+                  Privacy-by-design · Staff-mediated
+                </span>
+              </div>
+
+              <div>
+                <span className="text-xs font-semibold tracking-[0.2em] text-[hsl(160,84%,39%)]">
+                  FLAGSHIP PROJECT
+                </span>
+
+                <h2 className="text-3xl font-bold mt-2 mb-1 gradient-text">{intikhab.title}</h2>
+                <p className="text-sm text-muted-foreground mb-4">{intikhab.subtitle}</p>
+
+                <p className="text-muted-foreground mb-6 leading-relaxed">{intikhab.description}</p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {intikhab.technologies.map((tech: string) => (
+                    <span key={tech} className="text-xs bg-[hsl(160,84%,39%)]/20 text-[hsl(160,84%,39%)] px-3 py-1 rounded-full font-medium">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-4">
+                  <motion.a
+                    whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.5)" }}
+                    whileTap={{ scale: 0.95 }}
+                    href={intikhab.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-all"
+                  >
+                    <ExternalLink className="w-5 h-5" /> View Live
+                  </motion.a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
      {/* Featured Project */}

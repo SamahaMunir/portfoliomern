@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Download, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, Download, ArrowDown, ExternalLink, ArrowUpRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 
@@ -182,6 +182,63 @@ export default function Home() {
                   <Icon className="w-6 h-6" />
                 </motion.a>
               ))}
+            </motion.div>
+
+            {/* Featured Project */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+              className="pt-4"
+            >
+              <div className="glass rounded-2xl border border-primary/20 px-6 py-5 md:px-8 md:py-6 max-w-3xl mx-auto text-left">
+                <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+                  <div className="flex-1 space-y-2">
+                    <p className="text-xs font-semibold tracking-[0.2em] text-primary">
+                      FEATURED PROJECT
+                    </p>
+
+                    <h2 className="text-2xl md:text-3xl font-bold">
+                      Intikhab-e-Zauj
+                    </h2>
+
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                      A production, staff-mediated matrimonial platform I built end-to-end for
+                      Falah Khandan Center — with API-enforced privacy and a RAG-powered AI
+                      insights layer.
+                    </p>
+
+                    <p className="text-xs md:text-sm text-muted-foreground/80 pt-1">
+                      React · TypeScript · Node · MongoDB · LLM/RAG
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-3 md:flex-col md:shrink-0">
+                    <motion.a
+                      whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.4)" }}
+                      whileTap={{ scale: 0.95 }}
+                      href="https://intikhab-e-zauj.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold text-sm flex items-center gap-2 shadow-lg whitespace-nowrap"
+                    >
+                      View Live
+                      <ExternalLink className="w-4 h-4" />
+                    </motion.a>
+
+                    <Link href="/projects#intikhab-e-zauj">
+                      <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-5 py-2.5 glass rounded-lg font-semibold text-sm flex items-center gap-2 cursor-pointer whitespace-nowrap"
+                      >
+                        See Details
+                        <ArrowUpRight className="w-4 h-4" />
+                      </motion.a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
