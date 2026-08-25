@@ -1,21 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Star, ArrowUpRight } from "lucide-react";
 
-async function fetchProjects() {
-  const res = await fetch("/api/projects");
-  if (!res.ok) throw new Error("Failed to fetch projects");
-  return res.json();
-}
-
 export default function Projects() {
-  const { data: dbProjects } = useQuery({
-    queryKey: ["projects"],
-    queryFn: fetchProjects,
-    retry: 1,
-    staleTime: 5000,
-  });
-
   // Featured project (FYP)
   const fluentiFYP = {
     _id: "fluenti-fyp",
@@ -248,53 +234,6 @@ export default function Projects() {
                   )}
 
                   {/* Technologies - EMERALD */}
-                  <div className="flex flex-wrap gap-3 pt-2">
-                    {project.technologies?.map((tech: string) => (
-                      <span 
-                        key={tech} 
-                        className="px-4 py-1.5 text-sm font-medium bg-[hsl(160,84%,39%)]/10 text-[hsl(160,84%,39%)] rounded-full border border-[hsl(160,84%,39%)]/20"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-
-          {/* Database projects if any */}
-          {dbProjects?.map((project: any, index: number) => (
-            <motion.div
-              key={project._id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (otherProjects.length + index) * 0.1 }}
-              className="group"
-            >
-              <div className="grid md:grid-cols-[300px_1fr] gap-8 items-start">
-                <div className="relative overflow-hidden rounded-xl border-2 border-border">
-                  <div className="w-full aspect-[4/3] bg-gradient-to-br from-[hsl(160,84%,39%)]/10 to-[hsl(160,84%,39%)]/5" />
-                </div>
-
-                <div className="space-y-4">
-                  <a 
-                    href={project.githubUrl || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 group/title"
-                  >
-                    <h3 className="text-2xl md:text-3xl font-bold group-hover/title:text-[hsl(160,84%,39%)] transition-colors">
-                      {project.title}
-                    </h3>
-                    <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover/title:text-[hsl(160,84%,39%)] transition-colors" />
-                  </a>
-
-                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
-
                   <div className="flex flex-wrap gap-3 pt-2">
                     {project.technologies?.map((tech: string) => (
                       <span 
