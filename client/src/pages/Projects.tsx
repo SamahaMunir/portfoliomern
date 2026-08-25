@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Star, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { ExternalLink, Github, Star, ArrowUpRight } from "lucide-react";
 import { useEffect } from "react";
 
 export default function Projects() {
@@ -24,6 +24,7 @@ export default function Projects() {
     description:
       "A production, staff-mediated matrimonial platform built end-to-end for Falah Khandan Center. Combines a transparent rule-based matching engine (hard filters plus weighted 100-point scoring) with a RAG-powered AI insights layer that assists staff without replacing human judgment. Privacy is enforced at the API: server-side photo access control with per-consent reveal, plus on-device face verification on upload.",
     technologies: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "RAG", "Multi-LLM", "Cloudinary", "Vercel", "Render"],
+    imageUrl: "/projects/intikhab.jpg",
     liveUrl: "https://intikhab-e-zauj.org",
   };
 
@@ -140,12 +141,21 @@ export default function Projects() {
         >
           <div className="relative border-2 border-[hsl(160,84%,39%)] rounded-lg p-8 glass">
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="relative overflow-hidden rounded-lg border border-border h-64 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-[hsl(160,84%,39%)]/15 to-purple-500/10">
-                <ShieldCheck className="w-12 h-12 text-[hsl(160,84%,39%)]" />
-                <span className="text-sm font-medium text-muted-foreground px-6 text-center">
-                  Privacy-by-design · Staff-mediated
-                </span>
-              </div>
+              <a
+                href={intikhab.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group/shot"
+              >
+                <div className="relative overflow-hidden rounded-lg border border-border">
+                  <img
+                    src={intikhab.imageUrl}
+                    alt={`${intikhab.title} landing page`}
+                    loading="lazy"
+                    className="w-full h-64 object-cover object-top group-hover/shot:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </a>
 
               <div>
                 <span className="text-xs font-semibold tracking-[0.2em] text-[hsl(160,84%,39%)]">
