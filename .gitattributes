@@ -1,0 +1,10 @@
+# Treat binary assets as binary so Git never applies text/EOL conversion.
+# A prior commit corrupted the resume PDF by round-tripping it as UTF-8 text.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary

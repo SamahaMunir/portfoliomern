@@ -167,7 +167,7 @@ export default function Home() {
               {[
                 { icon: Github, href: "https://github.com/SamahaMunir", label: "GitHub", target: "_blank" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/samaha-munir-b52834318/", label: "LinkedIn", target: "_blank" },
-                { icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=samahamunir14@gmail.com", label: "Email", target: "_blank" },
+                { icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=samimunir196@gmail.com", label: "Email", target: "_blank" },
               ].map(({ icon: Icon, href, label, target }) => (
                 <motion.a
                   key={label}
