@@ -155,7 +155,7 @@ export default function ExperiencePage() {
               <motion.a
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                href="/resume.pdf"
+                href="/Samaha_Munir_resume.pdf"
                 download
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold shadow-lg"
               >
