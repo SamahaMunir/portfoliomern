@@ -42,8 +42,8 @@ const experiences: Experience[] = [
     position: "Full Stack Developer & AI Engineer",
     location: "Pakistan (Remote)",
     type: "Full-time",
-    startDate: "July 2024",
-    endDate: "Dec 2024",
+    startDate: "Jul 2025",
+    endDate: "Dec 2025",
     description: "Led development of Fluenti, an AI-powered speech therapy and emotional support platform serving children and adults. Built comprehensive full-stack application with React, Node.js, MongoDB, and Python Flask, integrating multiple AI services for personalized therapeutic experiences.",
     achievements: [
       "Architected and deployed full-stack MERN application with Python Flask microservice for AI therapy bot",
@@ -78,15 +78,14 @@ const experiences: Experience[] = [
     position: "MERN Stack Developer",
     location: "Pakistan (Remote)",
     type: "Freelance",
-    startDate: "Jan 2023",
+    startDate: "2024",
     endDate: "Present",
     description: "Providing end-to-end web development services specializing in MERN stack applications. Working with clients globally to deliver custom web solutions, from concept to deployment.",
     achievements: [
-      "Delivered 10+ production-ready web applications for clients across various industries",
+      "Delivered several client web applications across different domains",
       "Specialized in responsive, user-friendly interfaces using React and modern CSS frameworks",
       "Implemented RESTful APIs with Node.js and Express, ensuring scalability and performance",
       "Integrated third-party services including payment gateways, email services, and cloud storage",
-      "Maintained 100% client satisfaction rate with timely delivery and clear communication",
     ],
     technologies: [
       "React",
@@ -110,7 +109,7 @@ const experiences: Experience[] = [
     endDate: "2024",
     description: "Completed numerous academic projects demonstrating proficiency in full-stack development, database design, and software engineering principles. Focused on building practical applications solving real-world problems.",
     achievements: [
-      "Built portfolio of 15+ projects showcasing diverse technical skills",
+      "Built a range of academic projects across the stack",
       "Collaborated with team members using Git for version control and Agile methodologies",
       "Gained hands-on experience with modern web technologies and best practices",
       "Presented projects and technical documentation to faculty and peers",
