@@ -24,6 +24,8 @@ export default function Projects() {
     description:
       "A production, staff-mediated matrimonial platform built end-to-end for Falah Khandan Center. Combines a transparent rule-based matching engine (hard filters plus weighted 100-point scoring) with a RAG-powered AI insights layer that assists staff without replacing human judgment. Privacy is enforced at the API: server-side photo access control with per-consent reveal, plus on-device face verification on upload.",
     technologies: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "RAG", "Multi-LLM", "Cloudinary", "Vercel", "Render"],
+    outcome:
+      "Live in production — digitized 900+ profiles, replacing a manual, paper-based matchmaking workflow.",
     imageUrl: "/projects/intikhab.jpg",
     liveUrl: "https://intikhab-e-zauj.org",
   };
@@ -34,6 +36,8 @@ export default function Projects() {
     title: "Fluenti - AI Speech Therapy Platform",
     description: "Comprehensive AI-powered platform combining interactive story-building games for speech therapy with emotional support sessions. Serves both children and adults using cutting-edge AI technology for personalized therapeutic experiences.",
     technologies: ["React", "Node.js", "MongoDB", "Python Flask", "Google Gemini", "OpenAI", "Groq", "TypeScript", "WebSocket"],
+    outcome:
+      "[PLACEHOLDER — add a real outcome, e.g. 'Final-year project serving story-based therapy for children and adults.' Replace with a true metric if available.]",
     imageUrl: "/projects/fluenti img.PNG",
     githubUrl: "https://github.com/FYPFluenti/Fluenti",
     liveUrl: "https://fluenti-app.onrender.com/",
@@ -58,41 +62,10 @@ export default function Projects() {
       description: "Modern portfolio website built with MERN stack featuring smooth animations, responsive design, and dark mode showcasing professional experience and technical skills.",
       technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS", "Framer Motion"],
       githubUrl: "https://github.com/SamahaMunir/portfoliomern",
-      liveUrl: null,
+      liveUrl: "https://samaha-munir.onrender.com",
       imageUrl: "/projects/portfolio.png",
       stats: "Full Stack",
     },
-    {
-      _id: "web-encryption-tool",
-      title: "Web Text Encryption Tool",
-      description: "Secure text encryption and decryption tool with multiple cipher algorithms including AES encryption, password protection, and secure key generation for data privacy.",
-      technologies: ["JavaScript", "CryptoJS", "HTML5", "CSS3"],
-      githubUrl: "https://github.com/SamahaMunir/web-text-encryption-tool",
-      liveUrl: null,
-      imageUrl: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop",
-      stats: "Security",
-    },
-    {
-      _id: "webcrawler-angular",
-      title: "Web Crawler",
-      description: "Intelligent web scraping application built with Angular that extracts and analyzes web data, parses HTML content, and provides structured data output for analysis.",
-      technologies: ["Angular", "TypeScript", "Node.js", "Cheerio"],
-      githubUrl: "https://github.com/SamahaMunir/WebCrawler-Angular",
-      liveUrl: null,
-      imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop",
-      stats: "Data Scraping",
-    },
-    {
-      _id: "ecommerce-platform",
-      title: "E-Commerce Store",
-      description: "Full-featured online store with product catalog, shopping cart, payment gateway integration, order management, and admin dashboard with real-time inventory tracking.",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe API"],
-      githubUrl: "https://github.com/MehakYahya/EcommerceStore",
-      liveUrl: null,
-      imageUrl: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
-      stats: "Collaborative",
-    },
-   
   ];
 
   return (
@@ -165,7 +138,9 @@ export default function Projects() {
                 <h2 className="text-3xl font-bold mt-2 mb-1 gradient-text">{intikhab.title}</h2>
                 <p className="text-sm text-muted-foreground mb-4">{intikhab.subtitle}</p>
 
-                <p className="text-muted-foreground mb-6 leading-relaxed">{intikhab.description}</p>
+                <p className="text-muted-foreground mb-3 leading-relaxed">{intikhab.description}</p>
+
+                <p className="text-sm italic text-muted-foreground mb-6 leading-relaxed">{intikhab.outcome}</p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {intikhab.technologies.map((tech: string) => (
@@ -211,8 +186,10 @@ export default function Projects() {
         </div>
         <div>
           <h2 className="text-3xl font-bold mb-4 gradient-text">{fluentiFYP.title}</h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">{fluentiFYP.description}</p>
-          
+          <p className="text-muted-foreground mb-3 leading-relaxed">{fluentiFYP.description}</p>
+
+          <p className="text-sm italic text-muted-foreground mb-6 leading-relaxed">{fluentiFYP.outcome}</p>
+
           <div className="flex flex-wrap gap-2 mb-6">
             {fluentiFYP.technologies.map((tech: string) => (
               <span key={tech} className="text-xs bg-[hsl(160,84%,39%)]/20 text-[hsl(160,84%,39%)] px-3 py-1 rounded-full font-medium">
@@ -330,6 +307,35 @@ export default function Projects() {
                         {tech}
                       </span>
                     ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    {project.githubUrl && (
+                      <motion.a
+                        whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.4)" }}
+                        whileTap={{ scale: 0.95 }}
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-6 py-3 bg-secondary/50 hover:bg-secondary/70 border border-border rounded-lg font-medium transition-all"
+                      >
+                        <Github className="w-5 h-5" /> View Code
+                      </motion.a>
+                    )}
+
+                    {project.liveUrl && (
+                      <motion.a
+                        whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(64, 217, 164, 0.5)" }}
+                        whileTap={{ scale: 0.95 }}
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-all"
+                      >
+                        <ExternalLink className="w-5 h-5" /> Live Demo
+                      </motion.a>
+                    )}
                   </div>
                 </div>
               </div>
