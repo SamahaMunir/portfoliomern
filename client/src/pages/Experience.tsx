@@ -212,12 +212,10 @@ export default function ExperiencePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {[
-              // Numbers intentionally left as placeholders pending confirmation
-              // against the resume and LinkedIn profile.
-              { value: "[PROJECTS]", label: "Projects" },
-              { value: "[YEARS]", label: "Years" },
-              { value: "[TECHNOLOGIES]", label: "Technologies" },
-              { value: "[N]", label: "Live · Production Apps" },
+              { value: "6+", label: "Projects" },
+              { value: "2+", label: "Years" },
+              { value: "15+", label: "Technologies" },
+              { value: "2", label: "Live · Production Apps" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -375,7 +373,6 @@ export default function ExperiencePage() {
                     <li>• Designed and shipped Intikhab-e-Zauj, a production platform with API-enforced privacy and a RAG-powered AI insights layer, for a real organization</li>
                     <li>• Successfully deployed production-ready AI healthcare application</li>
                     <li>• Integrated 5+ AI services (Gemini, OpenAI, Groq) in single platform</li>
-                    <li>• Maintained 100% client satisfaction in freelance projects</li>
                   </ul>
                 </div>
               </motion.div>
