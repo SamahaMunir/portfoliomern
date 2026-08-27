@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-  "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-  "dev:backend": "tsx server/index.ts",
-  "dev:frontend": "vite",
-  "build": "vite build",
-  "start": "tsx server/index.ts",
-  "check": "tsc"
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "tsx server/index.ts",
+    "dev:frontend": "vite",
+    "build": "vite build",
+    "start": "tsx server/index.ts",
+    "check": "tsc"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -16,6 +16,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-toast": "^1.1.5",
     "@tanstack/react-query": "^5.28.0",
+    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.23",
     "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.0",
@@ -41,6 +42,8 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7",
+    "tsx": "^4.7.1",
+    "vite": "^5.1.4",
     "wouter": "^3.0.0",
     "zod": "^3.22.4"
   },
@@ -54,11 +57,8 @@
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
-    "@vitejs/plugin-react": "^4.2.1",
     "concurrently": "^9.2.1",
     "esbuild": "^0.27.3",
-    "tsx": "^4.7.1",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.4"
+    "typescript": "^5.3.3"
   }
 }
