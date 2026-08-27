@@ -8,6 +8,36 @@ import type { Experience } from "../types/experience";
 const experiences: Experience[] = [
   {
     id: "1",
+    company: "Falah Khandan Center",
+    position: "Full-Stack Developer",
+    location: "Lahore, Pakistan (Remote)",
+    type: "Contract",
+    startDate: "May 2026",
+    endDate: "Present",
+    description: "Designed and built Intikhab-e-Zauj, a production staff-mediated matrimonial platform, end-to-end from architecture to deployment — replacing a manual, paper-based matchmaking workflow with a scalable digital system.",
+    achievements: [
+      "Built a full applicant journey: verified profiles, secure payments, and a transparent rule-based matching engine (hard filters + weighted 100-point scoring)",
+      "Implemented privacy-first photo protection enforced at the API layer, with per-consent reveal and on-device face verification on upload",
+      "Delivered a complete staff & admin console: role-based approval workflows, proposal moderation, message oversight, payment tracking, and audit logging",
+      "Built a RAG-powered AI insights tool using a provider-agnostic LLM layer (Claude / Gemini / OpenAI) that grounds staff recommendations in real past outcomes",
+      "Deployed on Vercel + Render + MongoDB Atlas",
+    ],
+    technologies: [
+      "React 19",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "RAG",
+      "Multi-LLM",
+      "Cloudinary",
+      "Vercel",
+      "Render",
+    ],
+    companyUrl: "https://intikhab-e-zauj.org",
+  },
+  {
+    id: "2",
     company: "Final Year Project - Fluenti",
     position: "Full Stack Developer & AI Engineer",
     location: "Pakistan (Remote)",
@@ -43,7 +73,7 @@ const experiences: Experience[] = [
     companyUrl: "https://fluenti-app.onrender.com/",
   },
   {
-    id: "2",
+    id: "3",
     company: "Freelance Software Development",
     position: "MERN Stack Developer",
     location: "Pakistan (Remote)",
@@ -71,7 +101,7 @@ const experiences: Experience[] = [
     ],
   },
   {
-    id: "3",
+    id: "4",
     company: "Academic Projects",
     position: "Software Engineering Student",
     location: "Pakistan",
@@ -108,6 +138,8 @@ const topSkills = [
   { name: "Python", level: "Intermediate" as const },
   { name: "AI Integration", level: "Advanced" as const },
   { name: "REST APIs", level: "Expert" as const },
+  { name: "RAG / LLM Integration", level: "Advanced" as const },
+  { name: "System Design", level: "Intermediate" as const },
 ];
 
 export default function ExperiencePage() {
@@ -141,8 +173,10 @@ export default function ExperiencePage() {
                 transition={{ delay: 0.6 }}
                 className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
               >
-                Recent Computer Science graduate specializing in full-stack development with the MERN stack. 
-                Successfully delivered Fluenti, an AI-powered healthcare platform, and multiple freelance projects.
+                Full-stack developer (MERN) who ships to production. Recently built and deployed
+                Intikhab-e-Zauj, a staff-mediated matrimonial platform with a RAG-powered AI layer,
+                for Falah Khandan Center — alongside Fluenti, an AI speech-therapy platform, and
+                freelance client work.
               </motion.p>
             </div>
 
@@ -178,10 +212,12 @@ export default function ExperiencePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {[
-              { value: "15+", label: "Projects" },
-              { value: "3+", label: "Years" },
-              { value: "12+", label: "Technologies" },
-              { value: "100%", label: "Satisfaction" },
+              // Numbers intentionally left as placeholders pending confirmation
+              // against the resume and LinkedIn profile.
+              { value: "[PROJECTS]", label: "Projects" },
+              { value: "[YEARS]", label: "Years" },
+              { value: "[TECHNOLOGIES]", label: "Technologies" },
+              { value: "[N]", label: "Live · Production Apps" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -336,6 +372,7 @@ export default function ExperiencePage() {
                 <div>
                   <h3 className="font-semibold text-lg md:text-xl mb-3">Notable Achievements</h3>
                   <ul className="text-base md:text-lg text-muted-foreground space-y-3 mt-2">
+                    <li>• Designed and shipped Intikhab-e-Zauj, a production platform with API-enforced privacy and a RAG-powered AI insights layer, for a real organization</li>
                     <li>• Successfully deployed production-ready AI healthcare application</li>
                     <li>• Integrated 5+ AI services (Gemini, OpenAI, Groq) in single platform</li>
                     <li>• Maintained 100% client satisfaction in freelance projects</li>
