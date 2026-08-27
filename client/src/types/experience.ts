@@ -3,7 +3,7 @@ export interface Experience {
   company: string;
   position: string;
   location: string;
-  type: "Full-time" | "Part-time" | "Contract" | "Freelance" | "Internship";
+  type?: "Full-time" | "Part-time" | "Contract" | "Freelance" | "Internship";
   startDate: string;
   endDate: string | "Present";
   description: string;

@@ -59,8 +59,12 @@ export default function ExperienceTimeline({ experiences }: ExperienceTimelinePr
                   <MapPin className="w-4 h-4" />
                   {exp.location}
                 </span>
-                <span>•</span>
-                <span>{exp.type}</span>
+                {exp.type && (
+                  <>
+                    <span>•</span>
+                    <span>{exp.type}</span>
+                  </>
+                )}
               </div>
 
               {/* Description - Single Paragraph */}

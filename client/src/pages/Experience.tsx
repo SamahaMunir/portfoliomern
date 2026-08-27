@@ -9,10 +9,10 @@ const experiences: Experience[] = [
   {
     id: "1",
     company: "Falah Khandan Center",
-    position: "Full-Stack Developer",
+    position: "Full-Stack Software Engineer",
     location: "Lahore, Pakistan (Remote)",
     type: "Contract",
-    startDate: "May 2026",
+    startDate: "2026",
     endDate: "Present",
     description: "Designed and built Intikhab-e-Zauj, a production staff-mediated matrimonial platform, end-to-end from architecture to deployment — replacing a manual, paper-based matchmaking workflow with a scalable digital system.",
     achievements: [
@@ -38,10 +38,9 @@ const experiences: Experience[] = [
   },
   {
     id: "2",
-    company: "Final Year Project - Fluenti",
+    company: "Fluenti — AI Speech Therapy Platform",
     position: "Full Stack Developer & AI Engineer",
-    location: "Pakistan (Remote)",
-    type: "Full-time",
+    location: "Lahore, Pakistan",
     startDate: "Jul 2025",
     endDate: "Dec 2025",
     description: "Led development of Fluenti, an AI-powered speech therapy and emotional support platform serving children and adults. Built comprehensive full-stack application with React, Node.js, MongoDB, and Python Flask, integrating multiple AI services for personalized therapeutic experiences.",
@@ -52,7 +51,7 @@ const experiences: Experience[] = [
       "Built crisis detection system using multi-layered AI analysis for emotional support sessions",
       "Developed secure authentication with JWT, 2FA using TOTP, and encrypted conversation storage",
       "Created progress tracking system with detailed analytics dashboards and psychological profiling",
-      "Deployed on Render with CI/CD pipeline, achieving 99.9% uptime",
+      "Deployed on Render with a CI/CD pipeline and automated monitoring",
     ],
     technologies: [
       "React 18",
@@ -71,59 +70,6 @@ const experiences: Experience[] = [
       "Docker",
     ],
     companyUrl: "https://fluenti-app.onrender.com/",
-  },
-  {
-    id: "3",
-    company: "Freelance Software Development",
-    position: "MERN Stack Developer",
-    location: "Pakistan (Remote)",
-    type: "Freelance",
-    startDate: "2024",
-    endDate: "Present",
-    description: "Providing end-to-end web development services specializing in MERN stack applications. Working with clients globally to deliver custom web solutions, from concept to deployment.",
-    achievements: [
-      "Delivered several client web applications across different domains",
-      "Specialized in responsive, user-friendly interfaces using React and modern CSS frameworks",
-      "Implemented RESTful APIs with Node.js and Express, ensuring scalability and performance",
-      "Integrated third-party services including payment gateways, email services, and cloud storage",
-    ],
-    technologies: [
-      "React",
-      "Node.js",
-      "MongoDB",
-      "Express",
-      "TypeScript",
-      "REST APIs",
-      "Git",
-      "Heroku",
-      "Vercel",
-    ],
-  },
-  {
-    id: "4",
-    company: "Academic Projects",
-    position: "Software Engineering Student",
-    location: "Pakistan",
-    type: "Part-time",
-    startDate: "2021",
-    endDate: "2024",
-    description: "Completed numerous academic projects demonstrating proficiency in full-stack development, database design, and software engineering principles. Focused on building practical applications solving real-world problems.",
-    achievements: [
-      "Built a range of academic projects across the stack",
-      "Collaborated with team members using Git for version control and Agile methodologies",
-      "Gained hands-on experience with modern web technologies and best practices",
-      "Presented projects and technical documentation to faculty and peers",
-    ],
-    technologies: [
-      "JavaScript",
-      "Python",
-      "Java",
-      "SQL",
-      "MongoDB",
-      "HTML/CSS",
-      "Bootstrap",
-      "Git/GitHub",
-    ],
   },
 ];
 
@@ -211,8 +157,8 @@ export default function ExperiencePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {[
-              { value: "6+", label: "Projects" },
-              { value: "2+", label: "Years" },
+              { value: "4", label: "Projects" },
+              { value: "1+", label: "Years" },
               { value: "15+", label: "Technologies" },
               { value: "2", label: "Live · Production Apps" },
             ].map((stat, index) => (
@@ -371,7 +317,7 @@ export default function ExperiencePage() {
                   <ul className="text-base md:text-lg text-muted-foreground space-y-3 mt-2">
                     <li>• Designed and shipped Intikhab-e-Zauj, a production platform with API-enforced privacy and a RAG-powered AI insights layer, for a real organization</li>
                     <li>• Successfully deployed production-ready AI healthcare application</li>
-                    <li>• Integrated 5+ AI services (Gemini, OpenAI, Groq) in single platform</li>
+                    <li>• Integrated 3 AI services (Gemini, OpenAI, Groq) in single platform</li>
                   </ul>
                 </div>
               </motion.div>
