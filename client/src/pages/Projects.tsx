@@ -62,7 +62,7 @@ export default function Projects() {
       description: "Modern portfolio website built with MERN stack featuring smooth animations, responsive design, and dark mode showcasing professional experience and technical skills.",
       technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS", "Framer Motion"],
       githubUrl: "https://github.com/SamahaMunir/portfoliomern",
-      liveUrl: "https://samaha-munir.onrender.com",
+      liveUrl: "https://samahamunir.com",
       imageUrl: "/projects/portfolio.png",
       stats: "Full Stack",
     },
