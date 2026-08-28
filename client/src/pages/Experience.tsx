@@ -120,8 +120,7 @@ export default function ExperiencePage() {
               >
                 Full-stack developer (MERN) who ships to production. Recently built and deployed
                 Intikhab-e-Zauj, a staff-mediated matrimonial platform with a RAG-powered AI layer,
-                for Falah Khandan Center — alongside Fluenti, an AI speech-therapy platform, and
-                freelance client work.
+                for Falah Khandan Center — alongside Fluenti, an AI speech-therapy platform.
               </motion.p>
             </div>
 
@@ -201,7 +200,7 @@ export default function ExperiencePage() {
             Career Timeline
           </h2>
           <p className="text-center text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From academic projects to production-ready AI platform - my journey in software engineering
+            From my final-year project to a live production platform
           </p>
         </motion.div>
 
