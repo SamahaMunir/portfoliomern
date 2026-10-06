@@ -8,12 +8,12 @@ import type { Experience } from "../types/experience";
 const experiences: Experience[] = [
   {
     id: "1",
-    company: "Falah Khandan Center",
+    company: "Self-employed",
     position: "Full-Stack Software Engineer",
     location: "Lahore, Pakistan (Remote)",
     type: "Contract",
     startDate: "2026",
-    endDate: "Present",
+    endDate: "Oct 2026",
     description: "Designed and built Intikhab-e-Zauj, a production staff-mediated matrimonial platform, end-to-end from architecture to deployment — replacing a manual, paper-based matchmaking workflow with a scalable digital system.",
     achievements: [
       "Built a full applicant journey: verified profiles, secure payments, and a transparent rule-based matching engine (hard filters + weighted 100-point scoring)",
@@ -120,7 +120,7 @@ export default function ExperiencePage() {
               >
                 Full-stack developer (MERN) who ships to production. Recently built and deployed
                 Intikhab-e-Zauj, a staff-mediated matrimonial platform with a RAG-powered AI layer,
-                for Falah Khandan Center — alongside Fluenti, an AI speech-therapy platform.
+                for a Lahore-based family-welfare organization — alongside Fluenti, an AI speech-therapy platform.
               </motion.p>
             </div>
 

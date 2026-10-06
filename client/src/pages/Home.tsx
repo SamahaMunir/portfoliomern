@@ -204,7 +204,7 @@ export default function Home() {
 
                     <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                       A production, staff-mediated matrimonial platform I built end-to-end for
-                      Falah Khandan Center — with API-enforced privacy and a RAG-powered AI
+                      a Lahore-based family-welfare organization — with API-enforced privacy and a RAG-powered AI
                       insights layer.
                     </p>
 

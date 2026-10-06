@@ -20,9 +20,9 @@ export default function Projects() {
   const intikhab = {
     _id: "intikhab-e-zauj",
     title: "Intikhab-e-Zauj",
-    subtitle: "Falah Khandan Center — Guided Matrimonial Platform",
+    subtitle: "A Lahore-based family-welfare organization — Guided Matrimonial Platform",
     description:
-      "A production, staff-mediated matrimonial platform built end-to-end for Falah Khandan Center. Combines a transparent rule-based matching engine (hard filters plus weighted 100-point scoring) with a RAG-powered AI insights layer that assists staff without replacing human judgment. Privacy is enforced at the API: server-side photo access control with per-consent reveal, plus on-device face verification on upload.",
+      "A production, staff-mediated matrimonial platform built end-to-end for a Lahore-based family-welfare organization. Combines a transparent rule-based matching engine (hard filters plus weighted 100-point scoring) with a RAG-powered AI insights layer that assists staff without replacing human judgment. Privacy is enforced at the API: server-side photo access control with per-consent reveal, plus on-device face verification on upload.",
     technologies: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "RAG", "Multi-LLM", "Cloudinary", "Vercel", "Render"],
     outcome:
       "Live in production — digitized 900+ profiles, replacing a manual, paper-based matchmaking workflow.",
